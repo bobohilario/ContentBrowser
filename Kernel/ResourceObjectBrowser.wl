@@ -20,8 +20,11 @@ resourceObjectBrowser[prop:("Local"|"UpdateAvailable")]:=With[{allinfo = With[{i
     resourceObjectBrowser[allinfo,prop]
 ]
 
+$unsupportedTypes={"Color","API","Archive","CodeSnippet","Courseware","Notebook","WolframModel","ZeroConfDemo","Blockchain"};
+
 resourceObjectBrowser[info:{KeyValuePattern[{"UUID"->_}]..}, selector_:All]:=
-    With[{bytype=KeySort@GroupBy[filterResourceBrowserInfo[info,selector],#["ResourceType"]/.{"DataResource"->"Data"}&]},
+    With[{bytype=KeyDrop[KeySort@GroupBy[filterResourceBrowserInfo[info,selector],
+        #["ResourceType"]/.{"DataResource"->"Data"}&],$unsupportedTypes]},
         With[{bytypeloc=GroupBy[#,getLocation]&/@bytype},
             tabView[Normal[
                 innerTabView/@(
@@ -39,7 +42,7 @@ filterResourceBrowserInfo[info_,"UpdateAvailable"]:=Select[
 
 makeResourceBrowserPanel[info:KeyValuePattern[{"Name"->name_,"Version"->v_}]]:=
     makeResourceBrowserPanel[name, v,ResourceSystemClient`Private`getAvailableVersion[info], info["UUID"]]
-makeResourceBrowserPanel[info:KeyValuePattern[{"Name"->name_}]]:=c2cRButton[name,info["UUID"]]
+makeResourceBrowserPanel[info:KeyValuePattern[{"Name"->name_}]]:={c2cRButton[name,info["UUID"]],SpanFromLeft}
 
 updateAvailableQ[info:KeyValuePattern[{"Version"->v_String}]]:=TrueQ[ResourceSystemClient`Private`getAvailableVersion[info]=!=v]
 updateAvailableQ[_]:=False
@@ -64,7 +67,7 @@ getLocation[KeyValuePattern[{"RepositoryLocation"->_URL,"ResourceLocations"->{__
     "Published/Locally Cached"
 
 getLocation[KeyValuePattern[{"ResourceLocations"->{___,_CloudObject,_LocalObject,___}}]]:=
-    "CloudDeployd/Locally Cached"
+    "CloudDeployed/Locally Cached"
 
 getLocation[KeyValuePattern[{"ResourceLocations"->{___,_CloudObject,___}}]]:=
     "CloudDeployed"
@@ -77,7 +80,7 @@ getLocation[___]:="Unknown"
 
 resourceObjectBrowser[___]:=$Failed
 
-$MaxPanels=50;
+$MaxPanels=20;
 
 makeResourceBrowserGrid[panels_]:=DynamicModule[{rows=Take[panels,UpTo[$MaxPanels]],n=$MaxPanels},
     
