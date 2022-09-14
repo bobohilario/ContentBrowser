@@ -7,7 +7,11 @@ Bob`ContentBrowser`ResourceObjectBrowser[args___]:=Catch[
     ResourceObject;
     resourceObjectBrowser[args]]
 
-resourceObjectBrowser[prop:("Local"|"UpdateAvailable")]:=With[{allinfo = With[{ids = ResourceSystemClient`Private`$localResources},
+resourceObjectBrowser[]:=resourceObjectBrowser["Local"]
+
+resourceObjectBrowser[prop:(_String|All)]:=resourceObjectBrowser[prop,Automatic]
+
+resourceObjectBrowser[prop:("Local"|"UpdateAvailable"), rest___]:=With[{allinfo = With[{ids = ResourceSystemClient`Private`$localResources},
    Module[{n = Length[ids]},
     Progress`EvaluateWithProgress[
      Select[Table[Quiet[ResourceObject[ids[[i]]][All]], {i, n}], 
@@ -17,14 +21,14 @@ resourceObjectBrowser[prop:("Local"|"UpdateAvailable")]:=With[{allinfo = With[{i
       "ItemCurrent" -> i, "ItemTotal" -> n|>]
     ]
    ]},
-    resourceObjectBrowser[allinfo,prop]
+    resourceObjectBrowser[allinfo,prop, rest]
 ]
 
 $unsupportedTypes={"Color","API","Archive","CodeSnippet","Courseware","Notebook","WolframModel","ZeroConfDemo","Blockchain"};
 
-resourceObjectBrowser[info:{KeyValuePattern[{"UUID"->_}]..}, selector_:All]:=
-    With[{bytype=KeyDrop[KeySort@GroupBy[filterResourceBrowserInfo[info,selector],
-        #["ResourceType"]/.{"DataResource"->"Data"}&],$unsupportedTypes]},
+resourceObjectBrowser[info:{KeyValuePattern[{"UUID"->_}]..}, selector_, rtypes_]:=
+    With[{bytype=filterRTypes[KeySort@GroupBy[filterResourceBrowserInfo[info,selector],
+        #["ResourceType"]/.{"DataResource"->"Data"}&],rtypes]},
         With[{bytypeloc=GroupBy[#,getLocation]&/@bytype},
             tabView[Normal[
                 innerTabView/@(
@@ -35,6 +39,12 @@ resourceObjectBrowser[info:{KeyValuePattern[{"UUID"->_}]..}, selector_:All]:=
 
         ]
     ]
+
+filterRTypes[bytype_,l_List]:=KeyTake[bytype,l]
+filterRTypes[bytype_,rtype_String]:=filterRTypes[bytype,{rtype}]
+
+filterRTypes[bytype_,Automatic]:=KeyDrop[bytype,$unsupportedTypes]
+filterRTypes[bytype_,All]:=bytype
 
 filterResourceBrowserInfo[info_,All|"Local"]:=info
 filterResourceBrowserInfo[info_,"UpdateAvailable"]:=Select[
