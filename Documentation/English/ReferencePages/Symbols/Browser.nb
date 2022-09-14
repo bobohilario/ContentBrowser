@@ -1,0 +1,3218 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    151059,       3210]
+NotebookOptionsPosition[    142106,       3017]
+NotebookOutlinePosition[    144116,       3068]
+CellTagsIndexPosition[    144000,       3062]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "New in: ",
+ Cell["??", "HistoryData",
+  CellTags->"New",ExpressionUUID->"29d25b25-3c6d-43d6-bdad-4029e196c56e"],
+ " | Modified in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Modified",ExpressionUUID->"ac383352-8dc5-4746-bce3-5b00202aac88"],
+ " | Obsolete in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Obsolete",ExpressionUUID->"9bca2321-3909-476f-bc56-adc6a0ce6ed0"],
+ " | Excised in: ",
+ Cell[" ", "HistoryData",
+  CellTags->"Excised",ExpressionUUID->"7cd567da-10eb-4125-88dd-99659e8566c9"]
+}], "History",
+ CellID->356472133,ExpressionUUID->"3fbaf656-091e-4d89-a2bb-d3621d3f7209"],
+
+Cell["Created by: bobs on 11-29-2021 10:55:36", "AuthorDate",
+ CellID->753057244,ExpressionUUID->"dc807e46-029e-49f0-b912-13681e46f1ac"],
+
+Cell[CellGroupData[{
+
+Cell["Categorization", "CategorizationSection",
+ CellID->1895247848,ExpressionUUID->"645628ab-45a6-45f6-96b5-2a8d79136bb4"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->1953129032,ExpressionUUID->"a7ea810b-7d04-42be-af6c-ed11f15150ac"],
+
+Cell["Bob/ContentBrowser", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->1952096429,ExpressionUUID->"edbb980c-3ade-456e-af45-5a65c76cc61b"],
+
+Cell["Bob`ContentBrowser`", "Categorization",
+ CellLabel->"Context",
+ CellID->1777006984,ExpressionUUID->"73c5c9ca-9600-4ce4-88e6-0933d835e212"],
+
+Cell["Bob/ContentBrowser/ref/Browser", "Categorization",
+ CellLabel->"URI",
+ CellID->1101301259,ExpressionUUID->"a02ca6d8-3be7-4dfb-b8db-6891266962f9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->408706520,ExpressionUUID->"01ec922b-5313-4805-80c3-ffe23f57c124"],
+
+Cell["XXXX", "Keywords",
+ CellID->1477778534,ExpressionUUID->"d9830722-5b2b-4067-ba67-c6d812a3a501"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Syntax Templates", "TemplatesSection",
+ CellID->1375443383,ExpressionUUID->"291b894a-cdb9-4eb8-a003-f68659d95469"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Additional Function Template",
+ CellID->1562961773,ExpressionUUID->"d17b2532-b03c-44a1-ba5a-eee8902199d9"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Arguments Pattern",
+ CellID->678548707,ExpressionUUID->"e362771d-4b23-47f8-8a6c-c56503deec75"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Local Variables",
+ CellID->1229952979,ExpressionUUID->"d3385756-54c2-41f3-a698-f2d7dd6d5e11"],
+
+Cell[BoxData[""], "Template",
+ CellLabel->"Color Equal Signs",
+ CellID->142132031,ExpressionUUID->"cb07573b-4bb1-48fc-98d8-ee197ff8fbfc"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Browser", "ObjectName",
+ CellID->811229553,ExpressionUUID->"b84b8dfd-c3b8-4c90-90dc-87dd54fb985f"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"e3668db9-8685-4c72-bdb3-aa64ee5f4e5c"],
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["Browser",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Bob/ContentBrowser/ref/Browser"], "[", 
+   StyleBox["info", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+  "1265f5f6-1b79-48a4-8b7f-1cc1727fcffd"],
+ " \[LineSeparator]creates a notebook-based browser for the content described \
+in ",
+ Cell[BoxData[
+  StyleBox["info", "TI"]], "InlineFormula",ExpressionUUID->
+  "8175c3a8-2226-4689-9eb0-144c31d9b111"],
+ "."
+}], "Usage",
+ CellChangeTimes->{{3.847193740360098*^9, 3.84719377899944*^9}},
+ CellID->2108906115,ExpressionUUID->"fdf6da11-0bff-4b4b-99eb-b88dc2ab9c8b"],
+
+Cell[TextData[{
+ "The ",
+ Cell[BoxData[
+  StyleBox["info", "TI"]], "InlineFormula",ExpressionUUID->
+  "673ac3ef-6c9c-4aeb-aff4-45305b416d86"],
+ " can be either a ",
+ Cell[BoxData[
+  ButtonBox["Graph",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "c52bbc59-72ce-4b6d-92d6-80683fa95be6"],
+ " or ",
+ Cell[BoxData[
+  ButtonBox["Association",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "148f09b6-3bac-4ee7-b511-a523d0892260"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.847193844106015*^9, 3.8471938644906282`*^9}},
+ CellID->167481070,ExpressionUUID->"a2efbbe1-d7fd-4aff-b28b-a3350ec108fc"],
+
+Cell[TextData[{
+ "If ",
+ Cell[BoxData[
+  StyleBox["info", "TI"]], "InlineFormula",ExpressionUUID->
+  "4738c275-1472-49a5-89b2-1046ec97d43f"],
+ " is an ",
+ Cell[BoxData[
+  ButtonBox["Association",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "4f3ece5d-f8b9-4a06-871e-ecee82277dd0"],
+ " it is typically nested associations. Each ",
+ Cell[BoxData[
+  ButtonBox["Association",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "ab1fa489-28e0-4e49-8161-37d63bee6a19"],
+ " at the lowest level should can the following keys:"
+}], "Notes",
+ CellChangeTimes->{{3.847193866200162*^9, 3.847194000291601*^9}},
+ CellID->1604486931,ExpressionUUID->"961161de-d22d-4bce-a79b-738f76c608de"],
+
+Cell[BoxData[GridBox[{
+   {Cell["      ", "ModInfo",ExpressionUUID->
+     "f62e898c-c030-45ee-866b-6818c7cf19c1"], Cell[
+    "\"Label\"", "TableText",ExpressionUUID->
+     "28208d18-55c2-45ce-92da-7058ee93be5e"], Cell[
+    "label shown in the browser", "TableText",ExpressionUUID->
+     "6b4830bc-a9b2-4dd2-af1c-1703c6b95e1f"]},
+   {Cell["      ", "ModInfo",ExpressionUUID->
+     "7bb367f9-7ee4-43a1-aebc-aa48105d03b9"], Cell[
+    "\"URL\"", "TableText",ExpressionUUID->
+     "0dab56f0-596a-4e3c-b612-c49a808dcf9d"], Cell[
+    "external URL to open with a link", "TableText",ExpressionUUID->
+     "bc034f80-0c53-448e-9fb2-fd12b625f646"]}
+  }]], "2ColumnTableMod",
+ CellChangeTimes->{{3.847194015784367*^9, 3.847194044471395*^9}},
+ CellID->1429568707,ExpressionUUID->"41b72c01-c53c-4298-82e2-4df74eaed017"],
+
+Cell[TextData[{
+ "When info has the form ",
+ Cell[BoxData[
+  RowBox[{"<|", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox[
+      StyleBox["a", "TI"], 
+      StyleBox["1", "TR"]], "\[Rule]", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{
+        SubscriptBox[
+         StyleBox["b", "TI"], 
+         StyleBox["1", "TR"]], "\[Rule]", 
+        RowBox[{"<|", 
+         StyleBox["\[Ellipsis]", "TR"], "|>"}]}], ",", 
+       RowBox[{
+        SubscriptBox[
+         StyleBox["b", "TI"], 
+         StyleBox["2", "TR"]], "\[Rule]", 
+        RowBox[{"<|", 
+         StyleBox["\[Ellipsis]", "TR"], "|>"}]}]}], "|>"}]}], ",", 
+    StyleBox["\[Ellipsis]", "TR"]}], "|>"}]], "InlineFormula",ExpressionUUID->
+  "e189e6da-f224-4df2-9b7e-3c44bed268da"],
+ " then clicking on the ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["a", "TI"], 
+   StyleBox["1", "TR"]]], "InlineFormula",ExpressionUUID->
+  "a2302be9-61b7-4520-a24a-d54151ca411b"],
+ " tile will cause the browser to display ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["a", "TI"], 
+   StyleBox["1", "TR"]]], "InlineFormula",ExpressionUUID->
+  "c1284f83-361f-4b47-a639-6572b09b123c"],
+ ", ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["b", "TI"], 
+   StyleBox["1", "TR"]]], "InlineFormula",ExpressionUUID->
+  "4467b302-89e9-403e-9a98-1976c98e54e6"],
+ " and ",
+ Cell[BoxData[
+  SubscriptBox[
+   StyleBox["b", "TI"], 
+   StyleBox["2", "TR"]]], "InlineFormula",ExpressionUUID->
+  "52668022-4fcc-4a1d-8c85-3cb849868773"],
+ "."
+}], "Notes",
+ CellChangeTimes->{{3.847194048677641*^9, 3.847194224161386*^9}},
+ CellID->2118532264,ExpressionUUID->"b284774b-2d61-4fe4-bd12-e658d5602a41"],
+
+Cell[TextData[{
+ "If ",
+ Cell[BoxData[
+  StyleBox["info", "TI"]], "InlineFormula",ExpressionUUID->
+  "517cc613-eb4d-4324-a3f1-916b1e9f50f7"],
+ " is a ",
+ Cell[BoxData[
+  ButtonBox["Graph",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "cd0d12a9-8ad4-431c-bbf1-6343ea4cf2bf"],
+ " each vertex is displayed as a tile and clicking the tile will show tiles \
+for all vertices to which to clicked vertex connects. The graph should \
+contain ",
+ Cell[BoxData[
+  ButtonBox["AnnotationRules",
+   BaseStyle->"Link"]], "InlineFormula",ExpressionUUID->
+  "bdb4530e-9626-4c8f-8b48-10196ca5c09d"],
+ ". Each vertex that has the rule ",
+ Cell[BoxData[
+  RowBox[{"\"\<Root\>\"", "\[Rule]", 
+   ButtonBox["True",
+    BaseStyle->"Link"]}]], "InlineFormula",ExpressionUUID->
+  "01d9caf1-6180-4230-98ce-7d6653ec6f71"],
+ " will be shown initially by ",
+ Cell[BoxData[
+  RowBox[{
+   ButtonBox["Browser",
+    BaseStyle->"Link",
+    ButtonData->"paclet:Bob/ContentBrowser/ref/Browser"], "[", 
+   RowBox[{
+    ButtonBox["Graph",
+     BaseStyle->"Link"], "[", 
+    StyleBox["\[Ellipsis]", "TR"], "]"}], "]"}]], "InlineFormula",
+  ExpressionUUID->"fd8bb59a-1fb6-4761-99a6-1db484b797a1"],
+ ". \"Label\" and \"URL\" annotation rules can be used as described above to \
+define the appearance of the tiles."
+}], "Notes",
+ CellChangeTimes->{{3.847194231675558*^9, 3.847194432304249*^9}},
+ CellID->84834256,ExpressionUUID->"a6ed70f1-3e80-448b-8ed8-5dba1b3af288"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tech Notes", "TechNotesSection",
+ CellID->1650765920,ExpressionUUID->"ffc9fc35-d59e-4d79-82e3-eb71e9148148"],
+
+Cell["XXXX", "Tutorials",
+ CellID->1081581847,ExpressionUUID->"6ecab76e-b106-4f93-b96b-249b18063b87"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Demonstrations", "RelatedDemonstrationsSection",
+ CellID->1844514321,ExpressionUUID->"8a1e45eb-7f43-478a-a024-fbda1fd3c8a4"],
+
+Cell["XXXX", "RelatedDemonstrations",
+ CellID->1825748602,ExpressionUUID->"2a88e25a-8a27-462b-ae5a-0b3ffbf6fc4f"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Links", "RelatedLinksSection",
+ CellID->2110405478,ExpressionUUID->"d46e4205-c090-4003-9992-03b08a68d56d"],
+
+Cell["XXXX", "RelatedLinks",
+ CellID->1744954894,ExpressionUUID->"37e74f29-415d-44e4-a32c-8242acbc35a7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->1420220026,ExpressionUUID->"50766fe4-33c6-400d-ae6b-82a3cbaee074"],
+
+Cell["XXXX", "SeeAlso",
+ CellID->357240577,ExpressionUUID->"93683ef2-16ef-4e57-8770-239a2b1154b9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Guides", "MoreAboutSection",
+ CellChangeTimes->{{3.843042374232973*^9, 3.843042375545676*^9}},
+ CellID->1925584274,ExpressionUUID->"4155d5f0-0956-44c4-b000-230ddb56b2c3"],
+
+Cell["XXXX", "MoreAbout",
+ CellID->716332828,ExpressionUUID->"cc5e8f60-e4f3-4850-a9d1-de93a1ca9ea4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["Examples", "PrimaryExamplesSection"], 
+     ButtonBox[
+      RowBox[{
+       RowBox[{"More", " ", "Examples"}], " ", "\[RightTriangle]"}],
+      BaseStyle->"ExtendedExamplesLink",
+      ButtonData:>"ExtendedExamples"]}
+   }],
+  $Line = 0; Null]], "PrimaryExamplesSection",
+ CellID->612515114,ExpressionUUID->"abd60d39-0b7f-48f3-aa52-ab38354fc77e"],
+
+Cell["Create a simple browser using nested associations:", "ExampleText",
+ TaggingRules->{},
+ CellChangeTimes->{{3.847192842957621*^9, 3.8471928589129066`*^9}},
+ CellTags->"DefaultContent",
+ CellID->319073343,ExpressionUUID->"353fe172-ce13-4873-84a8-2a4014a7848e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Bob`ContentBrowser`Browser", "[", 
+  RowBox[{"<|", 
+   RowBox[{
+    RowBox[{"\"\<a1\>\"", "->", 
+     RowBox[{"<|", 
+      RowBox[{
+       RowBox[{"\"\<b1\>\"", "->", 
+        RowBox[{"<|", 
+         RowBox[{
+          RowBox[{"\"\<c\>\"", "->", 
+           RowBox[{"<|", 
+            RowBox[{
+             RowBox[{"\"\<Label\>\"", "->", "\"\<xxx\>\""}], ",", 
+             RowBox[{
+             "\"\<URL\>\"", "->", "\"\<https://www.wolfram.com\>\""}]}], 
+            "|>"}]}], ",", 
+          RowBox[{"\"\<d\>\"", "->", 
+           RowBox[{"<|", 
+            RowBox[{"\"\<e\>\"", "->", 
+             RowBox[{"<|", 
+              RowBox[{"\"\<Label\>\"", "->", "\"\<yyy\>\""}], "|>"}]}], 
+            "|>"}]}]}], "|>"}]}], ",", 
+       RowBox[{"\"\<b2\>\"", "->", 
+        RowBox[{"<|", 
+         RowBox[{"\"\<Label\>\"", "->", "\"\<zzz\>\""}], "|>"}]}]}], "|>"}]}],
+     ",", 
+    RowBox[{"\"\<a2\>\"", "->", 
+     RowBox[{"<|", 
+      RowBox[{"\"\<Label\>\"", "->", "\"\<aaaaa\>\""}], "|>"}]}]}], "|>"}], 
+  "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.847192767088499*^9, 3.847192773254113*^9}, 
+   3.847192805292251*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"In[36]:=",
+ CellID->469682135,ExpressionUUID->"81a0e417-6f1d-4b8c-9be7-dc45d0fdc205"],
+
+Cell[BoxData[
+ DynamicModuleBox[{Bob`ContentBrowser`Private`buttonids$$ = {"a2", "a1"}}, 
+  PanelBox[
+   TagBox[GridBox[{
+      {
+       ButtonBox[
+        StyleBox["\<\"Home\"\>",
+         StripOnInput->False,
+         FontSize->10],
+        Appearance->Automatic,
+        ButtonFunction:>(
+         Bob`ContentBrowser`Private`buttonids$$ = {"a2", "a1"}),
+        Evaluator->Automatic,
+        ImageSize->50,
+        Method->"Preemptive"]},
+      {
+       DynamicBox[ToBoxes[
+         Row[
+          DeleteMissing[
+           Map[Bob`ContentBrowser`GenerateItem[$CellContext`$18, 
+             Hold[Bob`ContentBrowser`Private`buttonids$$], #, 
+             
+             Graph[{"a1", "b1", "c", "d", "e", "b2", "a2"}, {{{1, 2}, {1, 
+               6}, {2, 3}, {2, 4}, {4, 5}}, Null}, {
+              AnnotationRules -> {
+                "b2" -> {"Information" -> <|"Label" -> "zzz"|>}, 
+                 "a2" -> {
+                  "Information" -> <|"Label" -> "aaaaa"|>, "Root" -> True}, 
+                 "c" -> {
+                  "Information" -> <|
+                    "Label" -> "xxx", "URL" -> "https://www.wolfram.com"|>}, 
+                 "a1" -> {"Root" -> True}, 
+                 "e" -> {"Information" -> <|"Label" -> "yyy"|>}}}]]& , 
+            Bob`ContentBrowser`Private`buttonids$$]]], StandardForm],
+        ImageSizeCache->{178., {25., 31.}}]}
+     },
+     AutoDelete->False,
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"]],
+  DynamicModuleValues:>{}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.84719280611909*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[36]=",
+ CellID->1607595486,ExpressionUUID->"045a8489-44cc-42d5-a3bc-3979dac600d5"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More Examples", "ExtendedExamplesSection",
+ CellTags->"ExtendedExamples",
+ CellID->1652400927,ExpressionUUID->"d90f0f1b-1a34-4065-b63c-de2dae239059"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Scope", "ExampleSection",ExpressionUUID->
+   "15b035d6-4149-4e22-a3ad-5daa45dc2e1b"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->643857085,ExpressionUUID->"89715379-975a-445b-81fd-cef83bed7f17"],
+
+Cell[TextData[{
+ "Create a simple browser using a ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["Graph", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/Graph",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "ab62403f-b170-4bc7-a569-eb834c251ccf"],
+ " containing ",
+ Cell[BoxData[
+  TagBox[
+   ButtonBox[
+    StyleBox["AnnotationRules", "SymbolsRefLink",
+     ShowStringCharacters->True,
+     FontFamily->"Source Sans Pro"],
+    BaseStyle->Dynamic[
+      FEPrivate`If[
+       CurrentValue["MouseOver"], {
+       "Link", FontColor -> RGBColor[0.8549, 0.39608, 0.1451]}, {"Link"}]],
+    ButtonData->"paclet:ref/AnnotationRules",
+    ContentPadding->False],
+   MouseAppearanceTag["LinkHand"]]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "b2bb5443-8c3f-4271-bd03-6d4c7449ba17"],
+ ":"
+}], "ExampleText",
+ TaggingRules->{},
+ CellChangeTimes->{{3.847192842957621*^9, 3.8471929013338537`*^9}},
+ CellTags->"DefaultContent",
+ CellID->1092683288,ExpressionUUID->"8f3cd233-445a-4f00-877e-c1e67194909f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Bob`ContentBrowser`Browser", "[", 
+  GraphicsBox[
+   NamespaceBox["NetworkGraphics",
+    DynamicModuleBox[{Typeset`graph = HoldComplete[
+      Graph[{
+       "a", "b", "c", "d", "e", "f", "z"}, {{{1, 2}, {2, 1}, {3, 1}, {1, 3}, {
+        1, 4}, {3, 5}, {5, 3}, {2, 6}, {1, 7}}, Null}, {
+       AnnotationRules -> {
+         "a" -> {"Information" -> <|
+             "Label" -> "Wolfram", "URL" -> "https://www.wolfram.com"|>, 
+            "Root" -> True}, 
+          "c" -> {"Information" -> <|
+             "Label" -> "Wolfram Alpha", "URL" -> 
+              "https://www.wolframalpha.com"|>, "Root" -> True}, 
+          "d" -> {"Information" -> <|
+             "Label" -> "Zombo", "URL" -> "http://zombo.com"|>}, 
+          "b" -> {"Information" -> <|
+             "Label" -> "Wolfram Cloud", "URL" -> 
+              "https://www.wolframcloud.com"|>, "Root" -> True}, 
+          "f" -> {"Information" -> <|
+             "Label" -> "Programming Lab", "URL" -> 
+              "https://www.wolfram.com/programming-lab/"|>}, 
+          "e" -> {"Information" -> <|
+             "Label" -> "WANE", "URL" -> 
+              "https://www.wolfram.com/wolfram-alpha-notebook-edition/"|>}}}]]\
+}, 
+     TagBox[GraphicsGroupBox[GraphicsComplexBox[CompressedData["
+1:eJxdk3k81Akfx6eZka0tCTlqVrSOyZajGGrx+aWJtk3CsCVUKAk1KmWlIrqs
+WI3Fo2PjSemxladYxOZYR6Sl2RzjnMPIMWOQa5zP7L/P9/X6vL7/fz7vt77f
+abdjZBKJFKjIP/+YKt/StnAWb5SVAh9YjIBc5hUtOqdE+Ouno9OwEyW/Ml3Z
+KwZAqzG9ItvcidIxStXZk5/Rbl8YE7N1DqT/u0Mfi9NERV8SJD3D/M77W7Eq
+OddXQ4lM/Ge8ztZj8xy+tTSMeJszj0FOwN3fOTK0aUjrRw0X0K6Uy7M4KAPD
+SWf0duYC1lpPhheoyeC2tvy1+7pFbEtX2hRcPowfBeEqs3cWQbv4V36s3zCo
+Dxdu6VJJBGP1v58y5FKEZtPMTtqRiJQNTv6VcVLUsQzi7cNJhNesUnOwkhRX
+ra/u9bpCIZaZSek6L8Vw5TBcUgsoBOdBTeE3dDF2Z+l16QxSiHWW71bKOb2I
+f3Cnu5pGJb4wrhxomxDhfamqe5QzlSj7yWqIvk8EvWwNf70oKnE9jXJo730h
+SrT1w1JzqERc9S8juSIBfs1ZZ1LFpRKauXxOgb4AxctuvFQ/O4PvJ+4HLrKk
+mOOlOb7RnUFzl8GzbzgS+PZ2U3jVcpxVCXF8xhuCQHg1If2EHElspvIYfQiJ
+ZyY0LZXlOHXPh+MXM4gnHg7O4sxpHDnkqucnGsA+3SGTfptpbLXq277PZQDN
+Ef68yIYpGDflJl2u7kdI9Z7MnqJR1Bn817PurADrg0zcHb4bReZOrctJ43wc
+iDTRLWwZQftXug2MaD5UeqgfY46OoOm30q+pWnzYH/1XfuPfMszlmt4LPtMD
+2w0vyEf4w2gzt89d+lc3wH6YzxyQgm7kW799RzfIGpo6qjIJPIsveB5q6IL2
+5iLfr/7pS1v0qL+qC/W2rIKbdlTikaUnfWxbN+5+bZ/1epFCGHHLZIM13Vj5
++uQfrZUUYnBVZuyV4B782JKkTr1BIdSylbc9UefDwrhB1X8vhZhS2cocj+Lj
+rf7zYC11CpExnxh/YpSP0DOPVXd2kImPBk3aZWwBTqxPvrcvaxEGo/1Vq6v6
+UR9IT2uxWkRGzCrGovMAOr9jXWxsWIC6ZDnfQjiAg67siAuBCzCSq1PdogfB
+1TiXtHzpAk6lPCSTFXtsYoacrlTwnHOTe6e7bQgT3u7uLS7zeOpFzF++I4Gp
+na8gcnYO2uETB8MVe2s+m/SoSBnCjksUIytDAX5e0bw5xE6C31Oi+F98EqBh
+yvEVQ9GXToCV042HQtTMLGQWPpVidonPdQdXEUI6dG5HhwyD1rJz5sO0CNvX
+ROvpWstgorU/lJvai8kdaVsSqCM4YFfi1mcixulPunFy9ggCsibmC/LFaMuw
+Lk2Jm0Sl8wgjeKkURlM/LN8yPolB0/hV2dekkIh/wB/Hp/CSFVsxr/CJEXPp
+1ljHFEqre4PM/Yfx+IVVbIL7NBJp8WULCh+NGk28me+noedFtrFQl8GAvoXC
+3S3H+cNn6GkKn3d6Tu2XKHjm/3JMuDRFhnI3h4zrkj4EHGFHTx9sxcZw33fE
+4T7k7fC4tJbeAsejmrH19WIEvLrA2URtxseg7TkXzcQoTwq82zH8N7z37DLL
+u92LDZp/1rzr56Jx16CoVizCeNqiffrYB0St9zE3shFh14af6rgrPiA+Nlxo
+cU2ItzcvhVFsmtCvl7+fTfoA8z5mbUXdKzzSbOaG6DfC4NzlLlZpHl7W9fcs
+M29A+aiqiYo0V8EHhxduWocmx7Kj8s+PkS6ZPx6hWwPS2mQjn5+zUPioolCw
+5E9En38amX3rPhIDDIRqBWXgc8MqtxingdYh33SXVYz99ae6N84nozNQrch5
+MQ/8VPlMh8srZLAszKKCCpC3+rgyS6sIv30OCzNd+Rqdezqff/mkFMwXrruz
+P71BUUhirfHlckR7zN8gzVZg/HAr2ym+EvmBQQWZGVVw8/aNfn6+CuQlD2Lp
+rrV47uQUvM2hBjVs2xI5rR45kX7r2oZqsTtpkG6TwEdygs/KK9+2Qs0ribaG
+KYDGxkan9oVWuITu4YWShBA/kRQ757WhvrqnnVsuBLNr0o3twkOqwTVrbpwI
+XVne7aIOHhIZLNHU970oMI0z9vBoh4k6aeL9GjFGcpTdo0racSAge6hTIEYE
+z0lAU+nA/wDyEyaT
+        "], {
+         {Hue[0.6, 0.7, 0.5], Opacity[0.7], Arrowheads[Medium], 
+          ArrowBox[BezierCurveBox[{
+           1, {2.3012648070577715`, 0.8821546837730281}, 2}], 
+           0.033485719389925866`], 
+          ArrowBox[BezierCurveBox[{
+           1, {1.3515306847920634`, 0.5700777967849124}, 3}], 
+           0.033485719389925866`], ArrowBox[{1, 4}, 0.033485719389925866`], 
+          ArrowBox[{1, 7}, 0.033485719389925866`], 
+          ArrowBox[BezierCurveBox[{
+           2, {2.113044894206882, 0.5697700832674922}, 1}], 
+           0.033485719389925866`], ArrowBox[{2, 6}, 0.033485719389925866`], 
+          ArrowBox[BezierCurveBox[{
+           3, {1.163472867902868, 0.8823398406799722}, 1}], 
+           0.033485719389925866`], 
+          ArrowBox[BezierCurveBox[{
+           3, {0.4637880669836736, 0.09143282054698511}, 5}], 
+           0.033485719389925866`], 
+          ArrowBox[BezierCurveBox[{
+           5, {0.31898033390160896`, 0.3488708619728012}, 3}], 
+           0.033485719389925866`]}, 
+         {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[0.7]}], 
+          DiskBox[1, 0.033485719389925866], DiskBox[2, 0.033485719389925866], 
+          DiskBox[3, 0.033485719389925866], DiskBox[4, 0.033485719389925866], 
+          DiskBox[5, 0.033485719389925866], DiskBox[6, 0.033485719389925866], 
+          DiskBox[7, 0.033485719389925866]}}]],
+      MouseAppearanceTag["NetworkGraphics"]],
+     AllowKernelInitialization->False]],
+   DefaultBaseStyle->{
+    "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+   FormatType->TraditionalForm,
+   FrameTicks->None], "]"}]], "Input",
+ TaggingRules->{},
+ CellChangeTimes->{{3.847192767088499*^9, 3.847192773254113*^9}, 
+   3.847192805292251*^9, 3.847192881110365*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"In[38]:=",
+ CellID->1595355919,ExpressionUUID->"4b986f9e-390d-4c9a-9d9b-5927fcb690c1"],
+
+Cell[BoxData[
+ DynamicModuleBox[{Bob`ContentBrowser`Private`buttonids$$ = {"a", "c", "b"}}, 
+  
+  PanelBox[
+   TagBox[GridBox[{
+      {
+       ButtonBox[
+        StyleBox["\<\"Home\"\>",
+         StripOnInput->False,
+         FontSize->10],
+        Appearance->Automatic,
+        ButtonFunction:>(
+         Bob`ContentBrowser`Private`buttonids$$ = {"a", "c", "b"}),
+        Evaluator->Automatic,
+        ImageSize->50,
+        Method->"Preemptive"]},
+      {
+       DynamicBox[ToBoxes[
+         Row[
+          DeleteMissing[
+           Map[Bob`ContentBrowser`GenerateItem[$CellContext`$19, 
+             Hold[Bob`ContentBrowser`Private`buttonids$$], #, 
+             
+             Graph[{"a", "b", "c", "d", "e", "f", "z"}, {{{1, 2}, {2, 1}, {3, 
+               1}, {1, 3}, {1, 4}, {3, 5}, {5, 3}, {2, 6}, {1, 7}}, Null}, {
+              AnnotationRules -> {
+                "a" -> {
+                  "Information" -> <|
+                    "Label" -> "Wolfram", "URL" -> 
+                    "https://www.wolfram.com"|>, "Root" -> True}, 
+                 "c" -> {
+                  "Information" -> <|
+                    "Label" -> "Wolfram Alpha", "URL" -> 
+                    "https://www.wolframalpha.com"|>, "Root" -> True}, 
+                 "d" -> {
+                  "Information" -> <|
+                    "Label" -> "Zombo", "URL" -> "http://zombo.com"|>}, 
+                 "b" -> {
+                  "Information" -> <|
+                    "Label" -> "Wolfram Cloud", "URL" -> 
+                    "https://www.wolframcloud.com"|>, "Root" -> True}, 
+                 "f" -> {
+                  "Information" -> <|
+                    "Label" -> "Programming Lab", "URL" -> 
+                    "https://www.wolfram.com/programming-lab/"|>}, 
+                 "e" -> {
+                  "Information" -> <|
+                    "Label" -> "WANE", "URL" -> 
+                    "https://www.wolfram.com/wolfram-alpha-notebook-edition/"|>\
+}}, FormatType -> TraditionalForm}]]& , 
+            Bob`ContentBrowser`Private`buttonids$$]]], StandardForm],
+        ImageSizeCache->{481., {29., 34.}}]}
+     },
+     AutoDelete->False,
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"]],
+  DynamicModuleValues:>{}]], "Output",
+ TaggingRules->{},
+ CellChangeTimes->{3.84719280611909*^9, 3.847192881758691*^9},
+ CellTags->"DefaultContent",
+ CellLabel->"Out[38]=",
+ CellID->2007604754,ExpressionUUID->"8b93d153-a44b-4c5e-a60e-83997b369364"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Generalizations & Extensions", "ExampleSection",ExpressionUUID->
+   "888aae1a-b32d-4a09-9848-46704d47501c"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->135930362,ExpressionUUID->"880d90b2-07f9-4fe9-8ad9-dd3dc2443442"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Options", "ExampleSection",ExpressionUUID->
+   "d04425ec-5dd5-420d-b4f2-4c456adc9935"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1806477373,ExpressionUUID->"cce99a2a-bdae-4b14-b2c4-579a2315303e"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "XXXX", "ExampleSubsection",ExpressionUUID->
+   "458c49de-f086-43a8-9910-e3ae9677ac56"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->341406725,ExpressionUUID->"91072e34-fd15-4061-a95b-e85cde40dbf1"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "XXXX", "ExampleSubsection",ExpressionUUID->
+   "31b9d0cd-a722-4802-8a45-cddb3a3b1e45"],
+  $Line = 0; Null]], "ExampleSubsection",
+ CellID->2094005938,ExpressionUUID->"6af171cc-ff3a-467c-a1c4-a59b5d83689e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Applications", "ExampleSection",ExpressionUUID->
+   "e533064f-daca-4a15-81ef-992000a6f5f2"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->995792930,ExpressionUUID->"3398400c-91d8-41b8-a076-a9596291b1de"],
+
+Cell["Create a browser for resource functions :", "ExampleText",
+ CellChangeTimes->{{3.847193825995859*^9, 3.847193827862405*^9}},
+ CellID->1479197182,ExpressionUUID->"1191c453-57bb-4e07-86e6-d4a19b3edc18"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Bob`ContentBrowser`Browser", "[", 
+  RowBox[{"Association", "/@", 
+   RowBox[{"Map", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"ResourceObject", "[", "#", "]"}], "[", "\"\<UUID\>\"", "]"}],
+        "->", 
+       RowBox[{"<|", 
+        RowBox[{
+         RowBox[{"\"\<Label\>\"", "->", 
+          RowBox[{
+           RowBox[{"ResourceObject", "[", "#", "]"}], "[", "\"\<Name\>\"", 
+           "]"}]}], ",", 
+         RowBox[{"\"\<URL\>\"", "->", 
+          RowBox[{"Hyperlink", "[", 
+           RowBox[{"\"\<Webpage\>\"", ",", 
+            RowBox[{"First", "@", 
+             RowBox[{
+              RowBox[{"ResourceObject", "[", "#", "]"}], "[", 
+              "\"\<DocumentationLink\>\"", "]"}]}]}], "]"}]}]}], "|>"}]}], 
+      "&"}], ",", 
+     RowBox[{"AssociationMap", "[", 
+      RowBox[{
+       RowBox[{
+       "ResourceFunction", "[", "\"\<CategoryResourceFunctions\>\"", "]"}], 
+       ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "\"\<Just For Fun\>\"", ",", "\"\<Images\>\"", ",", 
+         "\"\<Repository Tools\>\""}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", "2", "}"}]}], "]"}]}], "\[IndentingNewLine]", 
+  "]"}]], "Input",
+ CellLabel->"In[68]:=",
+ CellID->812166104,ExpressionUUID->"ac240f74-ebf0-433a-8d60-02168ef1a969"],
+
+Cell[BoxData[
+ DynamicModuleBox[{Bob`ContentBrowser`Private`buttonids$$ = {
+  "Just For Fun", "Repository Tools", "Images"}}, 
+  PanelBox[
+   TagBox[GridBox[{
+      {
+       ButtonBox[
+        StyleBox["\<\"Home\"\>",
+         StripOnInput->False,
+         FontSize->10],
+        Appearance->Automatic,
+        ButtonFunction:>(
+         Bob`ContentBrowser`Private`buttonids$$ = {
+          "Just For Fun", "Repository Tools", "Images"}),
+        Evaluator->Automatic,
+        ImageSize->50,
+        Method->"Preemptive"]},
+      {
+       DynamicBox[ToBoxes[
+         Row[
+          DeleteMissing[
+           Map[Bob`ContentBrowser`GenerateItem[$CellContext`$41, 
+             Hold[Bob`ContentBrowser`Private`buttonids$$], #, 
+             
+             Graph[{"Just For Fun", "00870399-d6ea-424b-a06e-43612e5bea29", 
+               "04491d53-feae-451b-902b-5c5bc3d4b019", 
+               "07c70323-7057-4c6d-931b-2f8da5ebee61", 
+               "095199c9-9249-4421-b86f-e92e6d3b1d89", 
+               "0976d19a-33ec-4f89-9b0b-44c36bd3ca9f", 
+               "09832fc9-1c08-40fa-9d64-81d298885e43", 
+               "098846c7-61ba-49eb-b4c7-88fa9f7ec6b9", 
+               "0a6c1398-470b-4b61-ba12-ddadfbdf0e3a", 
+               "0cd29d17-3be0-459c-b5ed-eb54aa6a2a91", 
+               "0d62f6fa-ee1d-4a7d-9725-b974dc29f6f6", 
+               "0e8474fa-6000-491f-8398-9adb712b34c9", 
+               "0f271056-d4ec-4a65-8667-a4f18b298f97", 
+               "12010764-9f22-4e11-9ecf-3310f9f9e7d4", 
+               "123afb64-53ce-4192-a48e-cf5ffc659d5e", 
+               "14e11308-823f-4dae-a4ce-9072a205c09e", 
+               "16ecf92a-f073-4626-a745-200d478e1fe4", 
+               "17b665fb-e257-4e25-969b-59ec1c1560eb", 
+               "181c1276-ebe0-4191-80c9-e92c7dfa25d5", 
+               "19469b7a-7c59-495b-8840-c074b896a0a7", 
+               "19db4b0a-f5e5-414f-a12a-73d2b38a21d0", 
+               "1e45549c-1108-46e5-af97-983e263b9029", 
+               "1ebe90b8-05c8-4e10-be20-0a1b59828b7b", 
+               "2009a3fa-e8b1-43d7-aa3d-04e7266a21b5", 
+               "2035f976-850f-40ae-8053-4f6356fac6bc", 
+               "207e0a27-3d04-4840-a3b3-5fb49d72fd98", 
+               "22aad600-17f0-4c4c-bc55-907d5e4b70ed", 
+               "247a2732-bd80-4aa7-8a69-aa9a31d003f6", 
+               "262c0dcb-bdf9-4425-8391-69751d48b4f2", 
+               "26916a8f-b885-4d63-ae94-b145dfc549d7", 
+               "2850e584-8e2e-45d4-a36e-4fc4a3660245", 
+               "29dcc1d8-437f-4eb4-9d10-a54bff5f83ae", 
+               "2bdc8ef2-07ef-43eb-814d-d9c4a43f2b45", 
+               "2ec129bf-b275-48be-a028-5afe81824b00", 
+               "2f0fa79a-247f-4251-9266-18ea1c2503ae", 
+               "2fbeef37-b24c-4f4a-87b1-d18fb03112c0", 
+               "30708445-e890-49b0-a1ed-7c45b60881f8", 
+               "31278c37-9f7a-4a1a-a353-623b45b148d4", 
+               "312b0daf-60e8-45ad-a9a7-c8b2eea385a5", 
+               "32e0c184-d8d6-4059-88f4-dc8ad960cc49", 
+               "35fd90fd-dcaf-43cf-8f2f-8049dabefb2a", 
+               "37b4d0dd-7887-4789-880a-1e9a62c84aef", 
+               "37ee3b40-04ea-4ddb-b632-943f70a30579", 
+               "3e24413f-25f7-493c-8d1b-1dff3e2c6711", 
+               "46782c2a-fc8a-4bf4-a79d-4dd21b7a45fb", 
+               "4a70a1cc-bfa7-4d69-9eed-a54dbe7dd196", 
+               "4b3b3026-dd03-4129-a757-11b2f4b5ec19", 
+               "4e744824-210d-426b-ad69-8c777d2c638e", 
+               "5018e465-9b1d-4bd3-a7b2-137f25cd5637", 
+               "511fd286-bdd6-4784-8a09-62e5a9d7d399", 
+               "512214bf-8202-4911-ba88-c5a01efd6a78", 
+               "52d7930e-792c-46cc-bbb5-35e39b217334", 
+               "55c596a2-013c-4c19-b932-dc72c394ab98", 
+               "55e5a7fc-f8a0-497a-8c06-33d3c3d8b78c", 
+               "5749c873-a839-4e5a-962d-80e86ce18d70", 
+               "58e2b1e8-d527-4093-8ca7-fb421e6dc9f3", 
+               "5a3775fb-7064-4398-8496-ed8acc6c71a4", 
+               "5f1766ed-a47a-4bc8-b915-e25a7d47b311", 
+               "5f6ddab3-52d4-43ce-aeb2-954f7f97e17d", 
+               "609b010d-90d3-4fb7-918d-ead9d597432f", 
+               "625f73f3-556e-4d5f-8668-2f0574155961", 
+               "68ec94d1-d79c-491f-a435-ca5a21f94f21", 
+               "69c997e8-3136-4112-887b-cef7b0c277fc", 
+               "6a04022b-5806-4964-b3bf-ca05a069555b", 
+               "6a04215c-729d-4362-8f41-d0e05dade2ee", 
+               "6a341579-a22d-4fd5-b5f2-eb63a2bf55e2", 
+               "6a65da1c-f661-452e-8778-544a3de283d3", 
+               "6c6e1d1b-ee3c-41f3-a57e-8c7e5d796671", 
+               "6d7bd8c8-5f68-45b9-a400-91ecbd642b82", 
+               "6e974e0e-918b-4505-b61a-9ffee0e34a4d", 
+               "6ee7d69d-8b0b-4456-90dc-c01af53bd2c2", 
+               "6f34e1a3-b3e0-4a6a-9291-7f2cc02f8e2c", 
+               "721f8020-15ba-499a-8409-a49f5dd7934e", 
+               "72715778-40be-419f-aa85-fc3a85b7850c", 
+               "73dfa851-9016-491e-977d-1b4df98e16ec", 
+               "743d1f0d-325f-4e95-a13e-6dff63ec8cfc", 
+               "751bc13f-28d7-49c4-8d86-53aa4baa3e18", 
+               "799bf456-a30d-4cde-9c9c-5a89c7f6b52f", 
+               "80d9086b-69c1-4283-9429-576791f3c3e7", 
+               "8468fd9e-700c-4573-99c1-e3224479380d", 
+               "859e6def-8977-4a20-b5c1-964b86e406c4", 
+               "866cd49c-2d9f-4a3d-bdb3-e13c7dd702a4", 
+               "86bc192f-e09c-408c-b107-1edf014813d8", 
+               "8cdeb240-b176-43ab-9870-7a56e3912e40", 
+               "8f986099-204c-43ec-aad1-0e1ae6852c8d", 
+               "9018b5c1-9919-42e5-9d95-5b25caa1c445", 
+               "91482fac-15a0-4d07-bc2b-153d698d9260", 
+               "9153cc30-4a2f-4c73-877a-870aa334f906", 
+               "93930a74-e01f-466c-9fdd-d86a21af501a", 
+               "9605ef56-94f4-427e-8225-b78154054758", 
+               "964be9f2-605e-47d5-aa3d-3ba846524ab2", 
+               "96c50a0a-bca6-4a94-9625-fb75d93f83fa", 
+               "97122ea7-0c11-4589-b016-07337fd561b8", 
+               "984b2045-50bb-45fe-af2f-7969627ab2e9", 
+               "9b6bdeeb-2379-4e2f-9307-34dadc24679b", 
+               "9c9d93ae-254e-4c81-953a-9bdcc7f8be85", 
+               "9d2cc7f6-1c99-49f4-88f9-4a2a2b8aa000", 
+               "9ff190d8-16b6-4e03-9481-109ef9be5858", 
+               "9ff65e59-cbc6-44e7-bba3-1f3b99f83af6", 
+               "a19874a1-584d-4ac1-aab3-550d9748cced", 
+               "a24858c8-45c5-4020-a8c2-c23bd5d26f04", 
+               "a259dfa2-3f28-4158-ad70-4715d0a3ffe5", 
+               "a2d32b63-f316-4812-b664-fc5192cb991d", 
+               "a404a1b9-47de-4542-af6d-0c65b101a27f", 
+               "a5dc8a83-2cfd-4c62-b518-beb87f1d28d8", 
+               "a5e0ed88-9a43-410f-8917-26c44dd55e84", 
+               "a6464f47-0762-4c92-a10b-44b00e4864df", 
+               "a6982a56-2bb9-4fea-ae4b-0a65f0541f08", 
+               "a755b12b-5395-431e-aaf9-fffdff3f4e9f", 
+               "a839a5ef-ef8f-47b4-a7d3-8b1fb3fbe7fa", 
+               "a9721f66-7ec1-45f4-8e55-cdcd8868b055", 
+               "a9cf9e82-ee2f-4db6-b02b-f7d6f4b42545", 
+               "ac853024-6b14-4630-add4-76c4c367ff1d", 
+               "b0623afa-5770-4052-911b-3b7e673f3785", 
+               "b15b1430-4592-4d3f-8794-4c7769c58c46", 
+               "b1c72efe-9ee3-407c-9a5a-53166548b45f", 
+               "b1f0e216-e805-40a1-bcb9-c5e16a20223a", 
+               "b643423b-ee26-420a-b540-bd3a0cc653a2", 
+               "b650a9ca-d363-46ba-8dc9-7d0f4e7690db", 
+               "b74957bf-5ccb-4a2c-9313-7678ea4000a7", 
+               "bb3a155d-e023-4762-a42a-f6e9a6dd95e2", 
+               "bbc9cfaf-c02b-43f5-b839-6613c388e780", 
+               "bc0304b0-50cb-4c9a-b36b-00507a643a85", 
+               "bccb40d5-ba66-4d6b-b969-ce8ad030bf5b", 
+               "bd61505b-641e-4196-8e7f-bc8b77e4f65f", 
+               "bd68cddf-09e3-4848-8ccf-44cb478eb7a9", 
+               "bd946d22-96a2-4c6b-9e79-43aa9fd51a47", 
+               "bee0550b-c27e-452d-b2ab-b71e11263ded", 
+               "bef79a4e-9f2d-451b-81ff-1619f4f62283", 
+               "c04e7471-4e81-41a4-87d6-26a935f576a0", 
+               "c1c40f4f-27ab-4931-a813-ac22a21886dc", 
+               "c335a0ac-c033-4087-9930-28e30e030631", 
+               "c65631c2-cc56-4250-9b52-7321392c9617", 
+               "c7d5d452-f345-44a7-ae69-c12cf38ace6e", 
+               "c7f96795-b828-465a-b0a8-24df5e301287", 
+               "cc737984-9fe4-4c1b-8710-8b24d6881bf6", 
+               "cd242521-d716-44b0-9ef5-50da6fb1423b", 
+               "cdf82302-9fc1-40e9-a523-779d456a3818", 
+               "d0262229-4150-4fb7-a9d7-3607da285337", 
+               "d1588f90-b66d-42b5-b651-2f6973b7d87b", 
+               "d222c29d-174f-4325-a775-ac1452598742", 
+               "d2a1aef5-f14d-4273-936a-ba876d31875c", 
+               "d5aebe4a-7ff3-4745-ae06-15a973118df6", 
+               "d68b18f1-fe22-4c0e-8c8d-c476e6ce33df", 
+               "d75c95ae-358d-4811-ae55-a2f425843231", 
+               "d79ee6f3-d757-4e97-a025-bf1eb852eaac", 
+               "d960ba65-e53a-4e40-8233-c4cd77d3b089", 
+               "d9ca575f-f36c-4cf3-8e53-d3c6f3ccb425", 
+               "d9f93ab3-af9c-49dd-8767-0e5876b1f751", 
+               "db37ed9a-7330-425e-b501-b959f5c91fcb", 
+               "ddda1c77-a0d0-48a4-b1f6-b46eaf0ac39c", 
+               "de752051-5b17-42aa-8516-fa3e01bc6186", 
+               "df257827-0ee0-44a6-b7ab-5c4bb0281157", 
+               "e0e1553e-65d6-46d8-ac83-dae29ecfe0f1", 
+               "e1cb57f2-2478-4076-ab9f-4b2064a7df51", 
+               "e1d8894f-4295-4528-9876-a7a0db9637ab", 
+               "e29c29c4-17ca-43fa-8aa6-f648053c4396", 
+               "e42ae458-f93c-4dd8-8fc0-dd716c6ca13e", 
+               "e42fe59d-9cd4-4f48-a4e0-e23057debd8e", 
+               "e5b2d275-fe5e-45a4-9e59-dd1f4c0fe2d5", 
+               "e7427366-b6eb-42f2-a4ce-efdf60f8aa61", 
+               "e9d0e450-5f4b-4992-a971-e4e194648645", 
+               "ea0aa64c-e2b7-444d-b3eb-bac0a740d61c", 
+               "ecede16e-5004-4b32-8d0b-4688904386b5", 
+               "eda18e29-c2fb-4177-a9d8-69b6982366a2", 
+               "ee7300c0-e834-4ce5-b42f-aeda415904a0", 
+               "f0906693-19d1-4f99-9692-339ad9391718", 
+               "f0bc7547-9240-4ff7-8109-c572067168ec", 
+               "f225b527-fc83-4eda-9390-d05f08f92b1b", 
+               "f36309d4-6db3-4d4f-bc7a-7de02d2ce638", 
+               "f3ad617b-9afb-44c1-a80b-da0cc4712b8e", 
+               "f562538d-25d9-4529-a1d8-86456ddbb15d", 
+               "f69fec42-e835-4760-a345-a538d835a8e3", 
+               "f7b7a08b-f6e7-4dbc-9301-8c4e3f5f6e41", 
+               "fa4f1a81-dd00-480d-b3d3-edf987ea2c04", 
+               "fb3c0cfe-3c74-4dc3-8cb1-88c121c4a444", 
+               "fb62dc0d-3370-4876-af7c-b98cc215e7dd", 
+               "fb9ec21b-0d4f-449c-8e2f-3c7c9163b288", 
+               "fc291934-3c05-4073-961d-9419aa1b3b5e", 
+               "fc7cd513-a9e2-44b7-9759-fdfb00f8540b", 
+               "fdf11ee6-f7f2-4d1b-90b5-5e501779a332", 
+               "fe0bce41-5cec-4a48-a47f-89433a738ffa", "Images", 
+               "0dc9658a-aa5f-4448-ad39-9e6e679420a7", 
+               "10ee7bd6-01ba-4631-9dc2-669a301f0dc9", 
+               "2017037f-5a07-4616-85fd-1ff0e2b7785e", 
+               "291f0eb2-fbba-4711-bd7d-4e002bd6931d", 
+               "2a252e62-6541-4b4b-b9eb-f1da4f368714", 
+               "2daf15be-55d5-4ec6-973f-3c1f69b4123a", 
+               "2f1cbd7d-262b-45d6-bc46-d2261a55cf13", 
+               "2fb84c94-8b50-4f0c-91da-e67f536c2c20", 
+               "36443991-d011-4dd9-a89a-b7abb176939b", 
+               "36d0192d-4f14-4690-8fd0-ffdad11b91f8", 
+               "45008f48-2219-45f5-8ac5-79ca065864f8", 
+               "49673d9f-bdbb-4f32-b768-61cc6f6805a9", 
+               "49f1e903-d6f6-4661-975f-f5d76b1543d9", 
+               "4a71b7c6-3859-4e92-803e-e23590f54281", 
+               "52cc24aa-c5a6-47ca-998f-3e5c08b4ed53", 
+               "5867f2b6-f816-4aea-a129-4a250c8ed41d", 
+               "5b8286c9-6d48-44bf-adae-14934818e22b", 
+               "5fc5ea7f-f287-4d4c-b400-df80515487af", 
+               "612904f7-165d-4c9d-9f5f-de506f4b1ea0", 
+               "61f8466c-58c5-488b-ba78-dd0e937feddf", 
+               "68cd5a94-d5fb-45c2-8a23-db4d58ea15f9", 
+               "6adbc8f1-e9a6-45a3-a081-7f4fe8f7a37c", 
+               "6d81e10b-9ab8-4599-bd6f-1c63fbaf8db0", 
+               "703de16d-9c7e-4f4c-a2b6-d60386c5b1b9", 
+               "7338029f-274b-4fbb-81f2-da61d58ef8f2", 
+               "752e5f09-2ecf-492c-9d4f-b5cfec7d8d37", 
+               "777ce755-48ea-4651-9078-c29fca1c5f0b", 
+               "7b2698c8-4a78-4b9f-ab06-982446bc5ec1", 
+               "7be66b7f-5dca-47b4-9ea8-6701c0016096", 
+               "7d7b2657-d84e-4b15-92bd-177633310dba", 
+               "863cce34-04b4-40aa-bbfe-e92f29d18ae9", 
+               "87073257-a517-4760-b931-69a2f71fd54e", 
+               "8c714f07-d694-43e1-8bca-798674c0bbb3", 
+               "9064da20-df88-4413-a32c-5189a6a6f4a1", 
+               "916e986c-cf85-452f-a7f8-543b095475ab", 
+               "91f1e9af-7d3b-430a-a095-6ac18b5a77cb", 
+               "922cedd1-6604-4859-9ddb-670e40ed0995", 
+               "94002c31-cf22-4fc9-8560-016cdab8f39b", 
+               "9661d7d5-0d18-4928-8380-648ee4e2e9c5", 
+               "98f83926-bd08-423a-aa5f-7f67ec1af5b4", 
+               "9ea81b32-459d-48f1-86b3-955bfd372116", 
+               "a163b15d-d3ce-4f8a-aecc-975a5367f34a", 
+               "a44265e5-b70e-44f3-b3d9-268a9bfdcdaf", 
+               "a83352ca-b04e-4173-b1cb-9b8900ce4c26", 
+               "a90d4b2b-f80d-4a6c-a042-ffb8add4f866", 
+               "aee0e3eb-fbd6-42c2-aa0a-13190292083a", 
+               "b61c4104-e4f7-41b0-bf78-e41867112e1b", 
+               "bbb5909b-c0ef-4b34-b6d4-510cb241d77d", 
+               "bef7e9ff-df16-4482-a604-9c3e053d2254", 
+               "c02631ea-3d23-4a74-ab36-6154795862ac", 
+               "c8c2e54e-4ea5-4135-ab87-83db692a84d2", 
+               "c8ff4f70-9bdb-42d1-9d01-2b5b48bcd239", 
+               "ccb78144-54df-4b3c-baf4-b43ddef91cfc", 
+               "ce315ddb-a747-447a-8adf-a626ea8541cd", 
+               "d2001dfe-8be1-458c-a412-08a21274e755", 
+               "dc16c482-1629-4641-b190-3df24e881828", 
+               "dec13a45-8e17-4fb1-8511-8ac06eb78504", 
+               "deeaf87a-a441-421d-90ed-eabbec913af3", 
+               "e361b19f-12c1-4c69-b4bb-fbd2a8d1d230", 
+               "e3d168f6-5884-4701-909b-f0b9e20b4a3e", 
+               "e7a1a0b0-7d43-4638-bda3-80127494afa1", 
+               "e8ff2e36-5f2d-4724-ad1e-c0931b33ceab", 
+               "ec153f5c-565f-4afe-95ae-d4f6fe8b1383", 
+               "f6aaa0b9-e341-4c71-8ace-3c55fe2a7272", 
+               "f6fe75c0-75af-4f20-bcda-60879ea3ab9c", 
+               "f86a4536-c387-4c6a-979a-e313b1bc85e2", 
+               "f8e09169-7f2e-43fc-8628-5108b8d33f47", 
+               "fe386761-ec07-4506-929e-11b5d0fab0c6", "Repository Tools", 
+               "004f6780-90a3-4b14-b0b7-a569c873d2fb", 
+               "057abdfa-765e-4807-9f22-7f6bd91bad44", 
+               "06e7ee38-e826-401c-b64d-81537e90dd01", 
+               "132691cc-2146-4de1-bc02-4c540fa11438", 
+               "236c95ea-babd-4357-b16e-9bf42d5d7da3", 
+               "28009a11-98c5-4cf3-8294-76983445ab75", 
+               "2f33ee13-1b27-4e4f-898f-fe3e472ef722", 
+               "40dfc9b5-392b-4b49-aee1-2d141e46fae4", 
+               "4504df82-053b-40ff-b945-cd975d04c695", 
+               "5252fc07-deed-442a-b646-733780e0c90c", 
+               "53f25320-8769-45a2-bb99-f3412b6715ab", 
+               "638eb97f-2e99-4e85-aba1-5131e282c447", 
+               "8b5abbe0-d131-4788-b491-7dd40abe5867", 
+               "99f3bbb5-c9d2-4eaf-8c12-420ceb643e09", 
+               "9fc285f3-4995-4a7e-845c-5c629c4fd697", 
+               "a04b8cc2-23c4-424e-9846-fb9e83ff42ef", 
+               "a05656c2-f71b-43a0-af70-2d04cb734106", 
+               "a246373b-3506-4205-bb9a-7af2586fc6e8", 
+               "b5b00b9a-b36f-493f-b5f1-1af97b601ba5", 
+               "ceba6199-bdcc-4636-8fe3-4ed195aa2109", 
+               "dcfc2b12-519b-4c0d-93fb-49a5c2d21402", 
+               "debaa7e3-63b6-4ef0-aea4-5530ebb3d639", 
+               "e0307cc7-7e23-4562-a7ea-af694044e8e9", 
+               "e0bd4fe6-9951-4954-a655-c893eb62e977", 
+               "e46ac8a6-95e1-42b2-8fb0-7a993b9c26c3"}, {CompressedData["
+1:eJw902WTFQQAQNFH1y65pNSCCtIgId0C0qt0lyCNdHeHKAiCIKEgXUqH0i2h
+dJd0d/N25gwf7pxfcMObdohoHzUQCOSJEghEGuS90RidMRiTsRibcRiX8RjC
+UMZnAiZkIiZmEoYxKZMxOVMwJVPxA6ZmGqZlOqZnODMwIz/kR/yYmZiZnzAL
+szIbszMHczIXczMPP2Ve5mN+FuBnLMhCLMwiLMpiLM4SLMlSLM0yLMvPWY7l
+WYFfsCIrsTKrsCqrsToj+CW/Yg3WZC3WZh3WZT3WZwM2ZCM2ZhM2ZTM2Zwt+
+zZZsxW/Ymm3Ylu3Ynh3YkZ34LTuzC7uyG7uzB3uyF3uzD/uyH/tzAAdyEAdz
+CIdyGIdzBEdyFEdzDMdyHL/jeH7PHziBE/kjJ3Eyf+IUTuXPnMbp/IUzOJOz
+OJu/8jfO4Vz+znmczwVcyEVczCVcymVczhX8g39yJVcFWx1sDUMYyrUMYzKu
+Y0qu5waGcyMzcBP/4t/czC3cym3czlzMzR3cyYLcxd3cw73cx2Lcz394gBV4
+kId4mFX4L//jEVbjUUbwGI+zJk/wJE/xNM/wLOvzHBuzCc+zGS+wFS+yNS/x
+MjvyCjvzf3bjVV7jdQ7jcN7gTd7ibd7hJN7lZN7jfU7jAz7kIz7mE87jYj7l
+Mz7nC74M9irYa77hW0ZOFGkURmU0RmcMxmQsxmYcxmU8hjCU8ZmACZmIiZmE
+YUwa9B3YV+xc
+               "], Null}, {
+              AnnotationRules -> {
+                "49f1e903-d6f6-4661-975f-f5d76b1543d9" -> {
+                  "Information" -> <|
+                    "Label" -> "AlphaChannelSetter", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/AlphaChannelSetter"]|>}, 
+                 "ccb78144-54df-4b3c-baf4-b43ddef91cfc" -> {
+                  "Information" -> <|
+                    "Label" -> "FaustGrayscaleConvert", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ccb78144-54df-4b3c-baf4-b43ddef91cfc/"]|>}, 
+                 "5252fc07-deed-442a-b646-733780e0c90c" -> {
+                  "Information" -> <|
+                    "Label" -> "SelectVersionNumber", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SelectVersionNumber"]|>}, 
+                 "e1cb57f2-2478-4076-ab9f-4b2064a7df51" -> {
+                  "Information" -> <|
+                    "Label" -> "MorseDecipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/MorseDecipher"]|>}, 
+                 "0f271056-d4ec-4a65-8667-a4f18b298f97" -> {
+                  "Information" -> <|
+                    "Label" -> "BlurBackground", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/BlurBackground"]|>}, 
+                 "c7d5d452-f345-44a7-ae69-c12cf38ace6e" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageRayTraceBump", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageRayTraceBump"]|>}, 
+                 "8468fd9e-700c-4573-99c1-e3224479380d" -> {
+                  "Information" -> <|
+                    "Label" -> "FindTheMonk", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/FindTheMonk"]|>}, 
+                 "964be9f2-605e-47d5-aa3d-3ba846524ab2" -> {
+                  "Information" -> <|
+                    "Label" -> "ImportPGN", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImportPGN"]|>}, 
+                 "58e2b1e8-d527-4093-8ca7-fb421e6dc9f3" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomMandala", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RandomMandala"]|>}, 
+                 "fc7cd513-a9e2-44b7-9759-fdfb00f8540b" -> {
+                  "Information" -> <|
+                    "Label" -> "MixedNumberForm", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/MixedNumberForm"]|>}, 
+                 "fe0bce41-5cec-4a48-a47f-89433a738ffa" -> {
+                  "Information" -> <|
+                    "Label" -> "SpectrogramEncode", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SpectrogramEncode"]|>}, 
+                 "45008f48-2219-45f5-8ac5-79ca065864f8" -> {
+                  "Information" -> <|
+                    "Label" -> "GetUnsplashImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/GetUnsplashImage"]|>}, 
+                 "916e986c-cf85-452f-a7f8-543b095475ab" -> {
+                  "Information" -> <|
+                    "Label" -> "MicroprintImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/MicroprintImage"]|>}, 
+                 "a6464f47-0762-4c92-a10b-44b00e4864df" -> {
+                  "Information" -> <|
+                    "Label" -> "TexturizePolygons", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/TexturizePolygons"]|>}, 
+                 "73dfa851-9016-491e-977d-1b4df98e16ec" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomFortune", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RandomFortune"]|>}, 
+                 "f562538d-25d9-4529-a1d8-86456ddbb15d" -> {
+                  "Information" -> <|
+                    "Label" -> "MorseCipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/MorseCipher"]|>}, 
+                 "a44265e5-b70e-44f3-b3d9-268a9bfdcdaf" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageSquareQ", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageSquareQ"]|>}, 
+                 "0a6c1398-470b-4b61-ba12-ddadfbdf0e3a" -> {
+                  "Information" -> <|
+                    "Label" -> "ClockHandsAngles", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ClockHandsAngles"]|>}, 
+                 "9b6bdeeb-2379-4e2f-9307-34dadc24679b" -> {
+                  "Information" -> <|
+                    "Label" -> "BalancedTernary", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/BalancedTernary"]|>}, 
+                 "6f34e1a3-b3e0-4a6a-9291-7f2cc02f8e2c" -> {
+                  "Information" -> <|
+                    "Label" -> "PartyParrot", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PartyParrot"]|>}, 
+                 "6a04022b-5806-4964-b3bf-ca05a069555b" -> {
+                  "Information" -> <|
+                    "Label" -> "TupperDecipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/TupperDecipher"]|>}, 
+                 "6e974e0e-918b-4505-b61a-9ffee0e34a4d" -> {
+                  "Information" -> <|
+                    "Label" -> "SolveKillerSudokuPuzzle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SolveKillerSudokuPuzzle"]|>}, 
+                 "d9f93ab3-af9c-49dd-8767-0e5876b1f751" -> {
+                  "Information" -> <|
+                    "Label" -> "LevyCCurve", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/d9f93ab3-af9c-49dd-8767-0e5876b1f751/"]|>}, 
+                 "512214bf-8202-4911-ba88-c5a01efd6a78" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomPetName", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/RandomPetName"]|>}, 
+                 "a9cf9e82-ee2f-4db6-b02b-f7d6f4b42545" -> {
+                  "Information" -> <|
+                    "Label" -> "InstEffect", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/InstEffect"]|>}, 
+                 "922cedd1-6604-4859-9ddb-670e40ed0995" -> {
+                  "Information" -> <|
+                    "Label" -> "CatMap", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CatMap"]|>}, 
+                 "Just For Fun" -> {"Root" -> True}, 
+                 "c8ff4f70-9bdb-42d1-9d01-2b5b48bcd239" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomPhoto", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RandomPhoto"]|>}, 
+                 "8f986099-204c-43ec-aad1-0e1ae6852c8d" -> {
+                  "Information" -> <|
+                    "Label" -> "SkyChart", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SkyChart"]|>}, 
+                 "859e6def-8977-4a20-b5c1-964b86e406c4" -> {
+                  "Information" -> <|
+                    "Label" -> "GeothmeticMeandian", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/GeothmeticMeandian"]|>}, 
+                 "29dcc1d8-437f-4eb4-9d10-a54bff5f83ae" -> {
+                  "Information" -> <|
+                    "Label" -> "WoodFramed", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/WoodFramed"]|>}, 
+                 "0dc9658a-aa5f-4448-ad39-9e6e679420a7" -> {
+                  "Information" -> <|
+                    "Label" -> "SkyViewImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/0dc9658a-aa5f-4448-ad39-9e6e679420a7/"]|>}, 
+                 "5f6ddab3-52d4-43ce-aeb2-954f7f97e17d" -> {
+                  "Information" -> <|
+                    "Label" -> "IdealCoinTossStatistics", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/IdealCoinTossStatistics"]|>}, 
+                 "4a71b7c6-3859-4e92-803e-e23590f54281" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageAlignFaces", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageAlignFaces"]|>}, 
+                 "bbb5909b-c0ef-4b34-b6d4-510cb241d77d" -> {
+                  "Information" -> <|
+                    "Label" -> "PlaceholderImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PlaceholderImage"]|>}, 
+                 "0e8474fa-6000-491f-8398-9adb712b34c9" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageASCII", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageASCII"]|>}, 
+                 "2f0fa79a-247f-4251-9266-18ea1c2503ae" -> {
+                  "Information" -> <|
+                    "Label" -> "PolyominoesGame", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PolyominoesGame"]|>}, 
+                 "312b0daf-60e8-45ad-a9a7-c8b2eea385a5" -> {
+                  "Information" -> <|
+                    "Label" -> "FromAlBhedString", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/FromAlBhedString"]|>}, 
+                 "e42ae458-f93c-4dd8-8fc0-dd716c6ca13e" -> {
+                  "Information" -> <|
+                    "Label" -> "VerticalJumpOnAstronomicalBodies", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/VerticalJumpOnAstronomicalBodies"]|>}, 
+                 "a05656c2-f71b-43a0-af70-2d04cb734106" -> {
+                  "Information" -> <|
+                    "Label" -> "PacletizeResourceFunction", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PacletizeResourceFunction"]|>}, 
+                 "68cd5a94-d5fb-45c2-8a23-db4d58ea15f9" -> {
+                  "Information" -> <|
+                    "Label" -> "YOLOImageLabel", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/YOLOImageLabel"]|>}, 
+                 "dcfc2b12-519b-4c0d-93fb-49a5c2d21402" -> {
+                  "Information" -> <|
+                    "Label" -> "CreateResourceObjectGallery", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CreateResourceObjectGallery"]|>}, 
+                 "5b8286c9-6d48-44bf-adae-14934818e22b" -> {
+                  "Information" -> <|
+                    "Label" -> "SteganographyInsert", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SteganographyInsert"]|>}, 
+                 "a5dc8a83-2cfd-4c62-b518-beb87f1d28d8" -> {
+                  "Information" -> <|
+                    "Label" -> "ConsecutiveSquareSum", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ConsecutiveSquareSum"]|>}, 
+                 "c7f96795-b828-465a-b0a8-24df5e301287" -> {
+                  "Information" -> <|
+                    "Label" -> "BugOutEffect", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/BugOutEffect"]|>}, 
+                 "a04b8cc2-23c4-424e-9846-fb9e83ff42ef" -> {
+                  "Information" -> <|
+                    "Label" -> "FormatAsResourceFunction", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/FormatAsResourceFunction"]|>}, 
+                 "69c997e8-3136-4112-887b-cef7b0c277fc" -> {
+                  "Information" -> <|
+                    "Label" -> "TimeToFallFormula", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/TimeToFallFormula"]|>}, 
+                 "98f83926-bd08-423a-aa5f-7f67ec1af5b4" -> {
+                  "Information" -> <|
+                    "Label" -> "CurveToBSplineFunction", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/98f83926-bd08-423a-aa5f-7f67ec1af5b4/"]|>}, 
+                 "e29c29c4-17ca-43fa-8aa6-f648053c4396" -> {
+                  "Information" -> <|
+                    "Label" -> "BisectionMethodFindRoot", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/BisectionMethodFindRoot"]|>}, 
+                 "d5aebe4a-7ff3-4745-ae06-15a973118df6" -> {
+                  "Information" -> <|
+                    "Label" -> "NQueenSolution", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/NQueenSolution"]|>}, 
+                 "bd61505b-641e-4196-8e7f-bc8b77e4f65f" -> {
+                  "Information" -> <|
+                    "Label" -> "ShadowShow", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ShadowShow"]|>}, 
+                 "1ebe90b8-05c8-4e10-be20-0a1b59828b7b" -> {
+                  "Information" -> <|
+                    "Label" -> "MagicInteger", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/MagicInteger"]|>}, 
+                 "6a341579-a22d-4fd5-b5f2-eb63a2bf55e2" -> {
+                  "Information" -> <|
+                    "Label" -> "LuckyNumbers", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/LuckyNumbers"]|>}, 
+                 "12010764-9f22-4e11-9ecf-3310f9f9e7d4" -> {
+                  "Information" -> <|
+                    "Label" -> "OEISSequence", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/OEISSequence"]|>}, 
+                 "612904f7-165d-4c9d-9f5f-de506f4b1ea0" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageSaliencyCrop", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageSaliencyCrop"]|>}, 
+                 "181c1276-ebe0-4191-80c9-e92c7dfa25d5" -> {
+                  "Information" -> <|
+                    "Label" -> "StarDate", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/StarDate"]|>}, 
+                 "bef7e9ff-df16-4482-a604-9c3e053d2254" -> {
+                  "Information" -> <|
+                    "Label" -> "Image3DSliceAnimate", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Image3DSliceAnimate"]|>}, 
+                 "a259dfa2-3f28-4158-ad70-4715d0a3ffe5" -> {
+                  "Information" -> <|
+                    "Label" -> "TupperCipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/TupperCipher"]|>}, 
+                 "6adbc8f1-e9a6-45a3-a081-7f4fe8f7a37c" -> {
+                  "Information" -> <|
+                    "Label" -> "FullWebImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/6adbc8f1-e9a6-45a3-a081-7f4fe8f7a37c/"]|>}, 
+                 "0cd29d17-3be0-459c-b5ed-eb54aa6a2a91" -> {
+                  "Information" -> <|
+                    "Label" -> "NthDigit", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/NthDigit"]|>}, 
+                 "b1c72efe-9ee3-407c-9a5a-53166548b45f" -> {
+                  "Information" -> <|
+                    "Label" -> "LensManipulate", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/LensManipulate"]|>}, 
+                 "a839a5ef-ef8f-47b4-a7d3-8b1fb3fbe7fa" -> {
+                  "Information" -> <|
+                    "Label" -> "KoremutakeConvert", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/KoremutakeConvert"]|>}, 
+                 "a6982a56-2bb9-4fea-ae4b-0a65f0541f08" -> {
+                  "Information" -> <|
+                    "Label" -> "Bob", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Bob"]|>}, 
+                 "2f1cbd7d-262b-45d6-bc46-d2261a55cf13" -> {
+                  "Information" -> <|
+                    "Label" -> "ReadPNG", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ReadPNG"]|>}, 
+                 "291f0eb2-fbba-4711-bd7d-4e002bd6931d" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageSplitCompare", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageSplitCompare"]|>}, 
+                 "fb3c0cfe-3c74-4dc3-8cb1-88c121c4a444" -> {
+                  "Information" -> <|
+                    "Label" -> "CrackCaesarCipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CrackCaesarCipher"]|>}, 
+                 "f0906693-19d1-4f99-9692-339ad9391718" -> {
+                  "Information" -> <|
+                    "Label" -> "TextWatermark", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/TextWatermark"]|>}, 
+                 "c65631c2-cc56-4250-9b52-7321392c9617" -> {
+                  "Information" -> <|
+                    "Label" -> "GenerateSudokuPuzzle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/GenerateSudokuPuzzle"]|>}, 
+                 "743d1f0d-325f-4e95-a13e-6dff63ec8cfc" -> {
+                  "Information" -> <|
+                    "Label" -> "Spookify", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/Spookify"]|>}, 
+                 "c1c40f4f-27ab-4931-a813-ac22a21886dc" -> {
+                  "Information" -> <|
+                    "Label" -> "MagicCube", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/MagicCube"]|>}, 
+                 "Repository Tools" -> {"Root" -> True}, 
+                 "bbc9cfaf-c02b-43f5-b839-6613c388e780" -> {
+                  "Information" -> <|
+                    "Label" -> "GenerateKillerSudokuPuzzle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/GenerateKillerSudokuPuzzle"]|>}, 
+                 "37b4d0dd-7887-4789-880a-1e9a62c84aef" -> {
+                  "Information" -> <|
+                    "Label" -> "CircleTheDrain", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CircleTheDrain"]|>}, 
+                 "057abdfa-765e-4807-9f22-7f6bd91bad44" -> {
+                  "Information" -> <|
+                    "Label" -> "ResourceSubmissionNotebook", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ResourceSubmissionNotebook"]|>}, 
+                 "b0623afa-5770-4052-911b-3b7e673f3785" -> {
+                  "Information" -> <|
+                    "Label" -> "CoinTossSimulator", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CoinTossSimulator"]|>}, 
+                 "f86a4536-c387-4c6a-979a-e313b1bc85e2" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageROIConvert", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ImageROIConvert"]|>}, 
+                 "49673d9f-bdbb-4f32-b768-61cc6f6805a9" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageColorFunction", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageColorFunction"]|>}, 
+                 "095199c9-9249-4421-b86f-e92e6d3b1d89" -> {
+                  "Information" -> <|
+                    "Label" -> "SolveSudokuPuzzle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SolveSudokuPuzzle"]|>}, 
+                 "99f3bbb5-c9d2-4eaf-8c12-420ceb643e09" -> {
+                  "Information" -> <|
+                    "Label" -> "ResourceFunctionMessage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ResourceFunctionMessage"]|>}, 
+                 "22aad600-17f0-4c4c-bc55-907d5e4b70ed" -> {
+                  "Information" -> <|
+                    "Label" -> "Fractran", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/Fractran"]|>}, 
+                 "7b2698c8-4a78-4b9f-ab06-982446bc5ec1" -> {
+                  "Information" -> <|
+                    "Label" -> "BakersMap", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/BakersMap"]|>}, 
+                 "c335a0ac-c033-4087-9930-28e30e030631" -> {
+                  "Information" -> <|
+                    "Label" -> "SudokuSolve", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SudokuSolve"]|>}, 
+                 "09832fc9-1c08-40fa-9d64-81d298885e43" -> {
+                  "Information" -> <|
+                    "Label" -> "Stereogram3D", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Stereogram3D"]|>}, 
+                 "9064da20-df88-4413-a32c-5189a6a6f4a1" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageBump", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageBump"]|>}, 
+                 "cdf82302-9fc1-40e9-a523-779d456a3818" -> {
+                  "Information" -> <|
+                    "Label" -> "PrettyProgressBar", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PrettyProgressBar"]|>}, 
+                 "35fd90fd-dcaf-43cf-8f2f-8049dabefb2a" -> {
+                  "Information" -> <|
+                    "Label" -> "WordWeave", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/WordWeave"]|>}, 
+                 "eda18e29-c2fb-4177-a9d8-69b6982366a2" -> {
+                  "Information" -> <|
+                    "Label" -> "MusicalScaleSample", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/MusicalScaleSample"]|>}, 
+                 "bc0304b0-50cb-4c9a-b36b-00507a643a85" -> {
+                  "Information" -> <|
+                    "Label" -> "LifetimeChart", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/LifetimeChart"]|>}, 
+                 "7338029f-274b-4fbb-81f2-da61d58ef8f2" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageRadialDivide", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageRadialDivide"]|>}, 
+                 "fb62dc0d-3370-4876-af7c-b98cc215e7dd" -> {
+                  "Information" -> <|
+                    "Label" -> "Play2048", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/Play2048"]|>}, 
+                 "32e0c184-d8d6-4059-88f4-dc8ad960cc49" -> {
+                  "Information" -> <|
+                    "Label" -> "PlayTouchTone", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/32e0c184-d8d6-4059-88f4-dc8ad960cc49/"]|>}, 
+                 "aee0e3eb-fbd6-42c2-aa0a-13190292083a" -> {
+                  "Information" -> <|
+                    "Label" -> "StopCamera", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/StopCamera"]|>}, 
+                 "cd242521-d716-44b0-9ef5-50da6fb1423b" -> {
+                  "Information" -> <|
+                    "Label" -> "StupidSort", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/StupidSort"]|>}, 
+                 "a83352ca-b04e-4173-b1cb-9b8900ce4c26" -> {
+                  "Information" -> <|
+                    "Label" -> "HexToColor", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/HexToColor"]|>}, 
+                 "2009a3fa-e8b1-43d7-aa3d-04e7266a21b5" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomRomanNumeral", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RandomRomanNumeral"]|>}, 
+                 "86bc192f-e09c-408c-b107-1edf014813d8" -> {
+                  "Information" -> <|
+                    "Label" -> "DisplaySudokuPuzzle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DisplaySudokuPuzzle"]|>}, 
+                 "2017037f-5a07-4616-85fd-1ff0e2b7785e" -> {
+                  "Information" -> <|
+                    "Label" -> "HueShift", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/2017037f-5a07-4616-85fd-1ff0e2b7785e/"]|>}, 
+                 "8b5abbe0-d131-4788-b491-7dd40abe5867" -> {
+                  "Information" -> <|
+                    "Label" -> "CloudResourceFunction", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CloudResourceFunction"]|>}, 
+                 "db37ed9a-7330-425e-b501-b959f5c91fcb" -> {
+                  "Information" -> <|
+                    "Label" -> "IntensifiesFrames", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/IntensifiesFrames"]|>}, 
+                 "984b2045-50bb-45fe-af2f-7969627ab2e9" -> {
+                  "Information" -> <|
+                    "Label" -> "SynonymGraph", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SynonymGraph"]|>}, 
+                 "ecede16e-5004-4b32-8d0b-4688904386b5" -> {
+                  "Information" -> <|
+                    "Label" -> "KeywordPlot", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/KeywordPlot"]|>}, 
+                 "5a3775fb-7064-4398-8496-ed8acc6c71a4" -> {
+                  "Information" -> <|
+                    "Label" -> "CanineVision", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CanineVision"]|>}, 
+                 "799bf456-a30d-4cde-9c9c-5a89c7f6b52f" -> {
+                  "Information" -> <|
+                    "Label" -> "CreateFace", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/799bf456-a30d-4cde-9c9c-5a89c7f6b52f/"]|>}, 
+                 "91f1e9af-7d3b-430a-a095-6ac18b5a77cb" -> {
+                  "Information" -> <|
+                    "Label" -> "ExtractPlotImageData", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ExtractPlotImageData"]|>}, 
+                 "9fc285f3-4995-4a7e-845c-5c629c4fd697" -> {
+                  "Information" -> <|
+                    "Label" -> "PublisherResources", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PublisherResources"]|>}, 
+                 "d1588f90-b66d-42b5-b651-2f6973b7d87b" -> {
+                  "Information" -> <|
+                    "Label" -> "LightsOutSolution", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/LightsOutSolution"]|>}, 
+                 "9ea81b32-459d-48f1-86b3-955bfd372116" -> {
+                  "Information" -> <|
+                    "Label" -> "DivergentColorFunction", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DivergentColorFunction"]|>}, 
+                 "40dfc9b5-392b-4b49-aee1-2d141e46fae4" -> {
+                  "Information" -> <|
+                    "Label" -> "ResourceSubmissions", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ResourceSubmissions"]|>}, 
+                 "6c6e1d1b-ee3c-41f3-a57e-8c7e5d796671" -> {
+                  "Information" -> <|
+                    "Label" -> "Shuffle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Shuffle"]|>}, 
+                 "16ecf92a-f073-4626-a745-200d478e1fe4" -> {
+                  "Information" -> <|
+                    "Label" -> "TimerTable", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/TimerTable"]|>}, 
+                 "5fc5ea7f-f287-4d4c-b400-df80515487af" -> {
+                  "Information" -> <|
+                    "Label" -> "NormalTexture", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/NormalTexture"]|>}, 
+                 "4e744824-210d-426b-ad69-8c777d2c638e" -> {
+                  "Information" -> <|
+                    "Label" -> "QRImageEmbed", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/QRImageEmbed"]|>}, 
+                 "2daf15be-55d5-4ec6-973f-3c1f69b4123a" -> {
+                  "Information" -> <|
+                    "Label" -> "ShowAlphaChannel", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ShowAlphaChannel"]|>}, 
+                 "2ec129bf-b275-48be-a028-5afe81824b00" -> {
+                  "Information" -> <|
+                    "Label" -> "DecorrelationStretch", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/2ec129bf-b275-48be-a028-5afe81824b00/"]|>}, 
+                 "2850e584-8e2e-45d4-a36e-4fc4a3660245" -> {
+                  "Information" -> <|
+                    "Label" -> "AtbashCipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/AtbashCipher"]|>}, 
+                 "dec13a45-8e17-4fb1-8511-8ac06eb78504" -> {
+                  "Information" -> <|
+                    "Label" -> "ColorToHex", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ColorToHex"]|>}, 
+                 "2fb84c94-8b50-4f0c-91da-e67f536c2c20" -> {
+                  "Information" -> <|
+                    "Label" -> "OccludeFaces", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/OccludeFaces"]|>}, 
+                 "4504df82-053b-40ff-b945-cd975d04c695" -> {
+                  "Information" -> <|
+                    "Label" -> "CategoryResourceFunctions", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CategoryResourceFunctions"]|>}, 
+                 "04491d53-feae-451b-902b-5c5bc3d4b019" -> {
+                  "Information" -> <|
+                    "Label" -> "OutShuffle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/OutShuffle"]|>}, 
+                 "f69fec42-e835-4760-a345-a538d835a8e3" -> {
+                  "Information" -> <|
+                    "Label" -> "Wiggled", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Wiggled"]|>}, 
+                 "8c714f07-d694-43e1-8bca-798674c0bbb3" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageSquareDivide", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageSquareDivide"]|>}, 
+                 "6a04215c-729d-4362-8f41-d0e05dade2ee" -> {
+                  "Information" -> <|
+                    "Label" -> "NameThatMusicalInterval", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/NameThatMusicalInterval"]|>}, 
+                 "36443991-d011-4dd9-a89a-b7abb176939b" -> {
+                  "Information" -> <|
+                    "Label" -> "CheckerboardImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CheckerboardImage"]|>}, 
+                 "2a252e62-6541-4b4b-b9eb-f1da4f368714" -> {
+                  "Information" -> <|
+                    "Label" -> "QuadtreeImageDecomposition", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/QuadtreeImageDecomposition"]|>}, 
+                 "609b010d-90d3-4fb7-918d-ead9d597432f" -> {
+                  "Information" -> <|
+                    "Label" -> "BlendLine", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/BlendLine"]|>}, 
+                 "52cc24aa-c5a6-47ca-998f-3e5c08b4ed53" -> {
+                  "Information" -> <|
+                    "Label" -> "INaturalistSearch", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/INaturalistSearch"]|>}, 
+                 "bd946d22-96a2-4c6b-9e79-43aa9fd51a47" -> {
+                  "Information" -> <|
+                    "Label" -> "SportsFieldGraphics", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SportsFieldGraphics"]|>}, 
+                 "31278c37-9f7a-4a1a-a353-623b45b148d4" -> {
+                  "Information" -> <|
+                    "Label" -> "RidgeLineMap", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RidgeLineMap"]|>}, 
+                 "ea0aa64c-e2b7-444d-b3eb-bac0a740d61c" -> {
+                  "Information" -> <|
+                    "Label" -> "Fibbinary", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Fibbinary"]|>}, 
+                 "f6fe75c0-75af-4f20-bcda-60879ea3ab9c" -> {
+                  "Information" -> <|
+                    "Label" -> "FractalCellularTexture", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/FractalCellularTexture"]|>}, 
+                 "777ce755-48ea-4651-9078-c29fca1c5f0b" -> {
+                  "Information" -> <|
+                    "Label" -> "ComplexTransformImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ComplexTransformImage"]|>}, 
+                 "55c596a2-013c-4c19-b932-dc72c394ab98" -> {
+                  "Information" -> <|
+                    "Label" -> "Excess01Ruler", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Excess01Ruler"]|>}, 
+                 "d0262229-4150-4fb7-a9d7-3607da285337" -> {
+                  "Information" -> <|
+                    "Label" -> "ChaoCipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ChaoCipher"]|>}, 
+                 "123afb64-53ce-4192-a48e-cf5ffc659d5e" -> {
+                  "Information" -> <|
+                    "Label" -> "Game24Solutions", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Game24Solutions"]|>}, 
+                 "9018b5c1-9919-42e5-9d95-5b25caa1c445" -> {
+                  "Information" -> <|
+                    "Label" -> "PixelSort", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PixelSort"]|>}, 
+                 "d68b18f1-fe22-4c0e-8c8d-c476e6ce33df" -> {
+                  "Information" -> <|
+                    "Label" -> "ColorSearch", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ColorSearch"]|>}, 
+                 "91482fac-15a0-4d07-bc2b-153d698d9260" -> {
+                  "Information" -> <|
+                    "Label" -> "CircularWinder", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CircularWinder"]|>}, 
+                 "7be66b7f-5dca-47b4-9ea8-6701c0016096" -> {
+                  "Information" -> <|
+                    "Label" -> "FirstWebImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/FirstWebImage"]|>}, 
+                 "625f73f3-556e-4d5f-8668-2f0574155961" -> {
+                  "Information" -> <|
+                    "Label" -> "LightsOutGame", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/LightsOutGame"]|>}, 
+                 "ee7300c0-e834-4ce5-b42f-aeda415904a0" -> {
+                  "Information" -> <|
+                    "Label" -> "Minesweeper", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/Minesweeper"]|>}, 
+                 "f36309d4-6db3-4d4f-bc7a-7de02d2ce638" -> {
+                  "Information" -> <|
+                    "Label" -> "DigitalSpiral", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DigitalSpiral"]|>}, 
+                 "c02631ea-3d23-4a74-ab36-6154795862ac" -> {
+                  "Information" -> <|
+                    "Label" -> "ImportGravatarImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImportGravatarImage"]|>}, 
+                 "d2001dfe-8be1-458c-a412-08a21274e755" -> {
+                  "Information" -> <|
+                    "Label" -> "MandelbrotSetRemap", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/d2001dfe-8be1-458c-a412-08a21274e755/"]|>}, 
+                 "d75c95ae-358d-4811-ae55-a2f425843231" -> {
+                  "Information" -> <|
+                    "Label" -> "IvyTheme", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/IvyTheme"]|>}, 
+                 "d79ee6f3-d757-4e97-a025-bf1eb852eaac" -> {
+                  "Information" -> <|
+                    "Label" -> "MirrorManipulate", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/MirrorManipulate"]|>}, 
+                 "a404a1b9-47de-4542-af6d-0c65b101a27f" -> {
+                  "Information" -> <|
+                    "Label" -> "SimulateAnimalVision", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SimulateAnimalVision"]|>}, 
+                 "9605ef56-94f4-427e-8225-b78154054758" -> {
+                  "Information" -> <|
+                    "Label" -> "ToAlBhedString", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ToAlBhedString"]|>}, 
+                 "93930a74-e01f-466c-9fdd-d86a21af501a" -> {
+                  "Information" -> <|
+                    "Label" -> "AlgebraicSubstitutionTiling", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/AlgebraicSubstitutionTiling"]|>}, 
+                 "96c50a0a-bca6-4a94-9625-fb75d93f83fa" -> {
+                  "Information" -> <|
+                    "Label" -> "DeepDreamBeta", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DeepDreamBeta"]|>}, 
+                 "752e5f09-2ecf-492c-9d4f-b5cfec7d8d37" -> {
+                  "Information" -> <|
+                    "Label" -> "BresenhamPoints", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/752e5f09-2ecf-492c-9d4f-b5cfec7d8d37/"]|>}, 
+                 "cc737984-9fe4-4c1b-8710-8b24d6881bf6" -> {
+                  "Information" -> <|
+                    "Label" -> "EvaluationStatusUpdate", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/EvaluationStatusUpdate"]|>}, 
+                 "9ff190d8-16b6-4e03-9481-109ef9be5858" -> {
+                  "Information" -> <|
+                    "Label" -> "PhoneNumberAnagrams", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PhoneNumberAnagrams"]|>}, 
+                 "a755b12b-5395-431e-aaf9-fffdff3f4e9f" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomEnglishHaiku", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RandomEnglishHaiku"]|>}, 
+                 "721f8020-15ba-499a-8409-a49f5dd7934e" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageKaleidoscope", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageKaleidoscope"]|>}, 
+                 "0976d19a-33ec-4f89-9b0b-44c36bd3ca9f" -> {
+                  "Information" -> <|
+                    "Label" -> "CistercianNumberEncode", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CistercianNumberEncode"]|>}, 
+                 "e8ff2e36-5f2d-4724-ad1e-c0931b33ceab" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageSuperResolution", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageSuperResolution"]|>}, 
+                 "a5e0ed88-9a43-410f-8917-26c44dd55e84" -> {
+                  "Information" -> <|
+                    "Label" -> "PhotoHiddenMessage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PhotoHiddenMessage"]|>}, 
+                 "61f8466c-58c5-488b-ba78-dd0e937feddf" -> {
+                  "Information" -> <|
+                    "Label" -> "VideoReverse", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/VideoReverse"]|>}, 
+                 "d960ba65-e53a-4e40-8233-c4cd77d3b089" -> {
+                  "Information" -> <|
+                    "Label" -> "FlightsOverhead", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/FlightsOverhead"]|>}, 
+                 "87073257-a517-4760-b931-69a2f71fd54e" -> {
+                  "Information" -> <|
+                    "Label" -> "AutomaticReport", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/AutomaticReport"]|>}, 
+                 "bccb40d5-ba66-4d6b-b969-ce8ad030bf5b" -> {
+                  "Information" -> <|
+                    "Label" -> "LSystem", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/LSystem"]|>}, 
+                 "b650a9ca-d363-46ba-8dc9-7d0f4e7690db" -> {
+                  "Information" -> <|
+                    "Label" -> "ReasonableRuler", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ReasonableRuler"]|>}, 
+                 "52d7930e-792c-46cc-bbb5-35e39b217334" -> {
+                  "Information" -> <|
+                    "Label" -> "CaesarDecipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CaesarDecipher"]|>}, 
+                 "fc291934-3c05-4073-961d-9419aa1b3b5e" -> {
+                  "Information" -> <|
+                    "Label" -> "MintNFT", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/fc291934-3c05-4073-961d-9419aa1b3b5e/"]|>}, 
+                 "5749c873-a839-4e5a-962d-80e86ce18d70" -> {
+                  "Information" -> <|
+                    "Label" -> "XKCDConvert", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/XKCDConvert"]|>}, 
+                 "866cd49c-2d9f-4a3d-bdb3-e13c7dd702a4" -> {
+                  "Information" -> <|
+                    "Label" -> "StringObfuscate", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/StringObfuscate"]|>}, 
+                 "9d2cc7f6-1c99-49f4-88f9-4a2a2b8aa000" -> {
+                  "Information" -> <|
+                    "Label" -> "DeepDreamAlpha", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DeepDreamAlpha"]|>}, 
+                 "94002c31-cf22-4fc9-8560-016cdab8f39b" -> {
+                  "Information" -> <|
+                    "Label" -> "StartCamera", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/StartCamera"]|>}, 
+                 "37ee3b40-04ea-4ddb-b632-943f70a30579" -> {
+                  "Information" -> <|
+                    "Label" -> "ShowChessPosition", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ShowChessPosition"]|>}, 
+                 "207e0a27-3d04-4840-a3b3-5fb49d72fd98" -> {
+                  "Information" -> <|
+                    "Label" -> "AutocompleteSearchQuery", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/AutocompleteSearchQuery"]|>}, 
+                 "4a70a1cc-bfa7-4d69-9eed-a54dbe7dd196" -> {
+                  "Information" -> <|
+                    "Label" -> "EstimateSudokuDifficultyLevel", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/EstimateSudokuDifficultyLevel"]|>}, 
+                 "26916a8f-b885-4d63-ae94-b145dfc549d7" -> {
+                  "Information" -> <|
+                    "Label" -> "MagicSquare", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/MagicSquare"]|>}, 
+                 "5018e465-9b1d-4bd3-a7b2-137f25cd5637" -> {
+                  "Information" -> <|
+                    "Label" -> "FloydSteinbergDithering", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/FloydSteinbergDithering"]|>}, 
+                 "06e7ee38-e826-401c-b64d-81537e90dd01" -> {
+                  "Information" -> <|
+                    "Label" -> "DistributeResourceFunctions", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DistributeResourceFunctions"]|>}, 
+                 "1e45549c-1108-46e5-af97-983e263b9029" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageInkOverWatercolor", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ImageInkOverWatercolor"]|>}, 
+                 "f6aaa0b9-e341-4c71-8ace-3c55fe2a7272" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomMondrian", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RandomMondrian"]|>}, 
+                 "b74957bf-5ccb-4a2c-9313-7678ea4000a7" -> {
+                  "Information" -> <|
+                    "Label" -> "RainbowText", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RainbowText"]|>}, 
+                 "e1d8894f-4295-4528-9876-a7a0db9637ab" -> {
+                  "Information" -> <|
+                    "Label" -> "TessellateGraphics", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/TessellateGraphics"]|>}, 
+                 "0d62f6fa-ee1d-4a7d-9725-b974dc29f6f6" -> {
+                  "Information" -> <|
+                    "Label" -> "DobbleSets", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DobbleSets"]|>}, 
+                 "5f1766ed-a47a-4bc8-b915-e25a7d47b311" -> {
+                  "Information" -> <|
+                    "Label" -> "GeoGlobe3D", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/GeoGlobe3D"]|>}, 
+                 "53f25320-8769-45a2-bb99-f3412b6715ab" -> {
+                  "Information" -> <|
+                    "Label" -> "WithdrawResourceSubmission", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/WithdrawResourceSubmission"]|>}, 
+                 "ec153f5c-565f-4afe-95ae-d4f6fe8b1383" -> {
+                  "Information" -> <|
+                    "Label" -> "WebPageImageCollage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/WebPageImageCollage"]|>}, 
+                 "703de16d-9c7e-4f4c-a2b6-d60386c5b1b9" -> {
+                  "Information" -> <|
+                    "Label" -> "ImagePortraitQ", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImagePortraitQ"]|>}, 
+                 "00870399-d6ea-424b-a06e-43612e5bea29" -> {
+                  "Information" -> <|
+                    "Label" -> "Collatz", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Collatz"]|>}, 
+                 "6ee7d69d-8b0b-4456-90dc-c01af53bd2c2" -> {
+                  "Information" -> <|
+                    "Label" -> "WolfieSay", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/WolfieSay"]|>}, 
+                 "9c9d93ae-254e-4c81-953a-9bdcc7f8be85" -> {
+                  "Information" -> <|
+                    "Label" -> "PolyPainting", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PolyPainting"]|>}, 
+                 "07c70323-7057-4c6d-931b-2f8da5ebee61" -> {
+                  "Information" -> <|
+                    "Label" -> "NestedBranching", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/NestedBranching"]|>}, 
+                 "3e24413f-25f7-493c-8d1b-1dff3e2c6711" -> {
+                  "Information" -> <|
+                    "Label" -> "BrainLanguageEncode", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/BrainLanguageEncode"]|>}, 
+                 "ceba6199-bdcc-4636-8fe3-4ed195aa2109" -> {
+                  "Information" -> <|
+                    "Label" -> "DataResourceFromDirectory", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DataResourceFromDirectory"]|>}, 
+                 "098846c7-61ba-49eb-b4c7-88fa9f7ec6b9" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomScribble", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RandomScribble"]|>}, 
+                 "80d9086b-69c1-4283-9429-576791f3c3e7" -> {
+                  "Information" -> <|
+                    "Label" -> "BrainLanguageEvaluate", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/BrainLanguageEvaluate"]|>}, 
+                 "e7a1a0b0-7d43-4638-bda3-80127494afa1" -> {
+                  "Information" -> <|
+                    "Label" -> "Graphics3DSketch", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Graphics3DSketch"]|>}, 
+                 "ddda1c77-a0d0-48a4-b1f6-b46eaf0ac39c" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageMosaic", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ImageMosaic"]|>}, 
+                 "deeaf87a-a441-421d-90ed-eabbec913af3" -> {
+                  "Information" -> <|
+                    "Label" -> "CosDiceLossLayer", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/CosDiceLossLayer"]|>}, 
+                 "68ec94d1-d79c-491f-a435-ca5a21f94f21" -> {
+                  "Information" -> <|
+                    "Label" -> "VideoColorMap", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/VideoColorMap"]|>}, 
+                 "bee0550b-c27e-452d-b2ab-b71e11263ded" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomPseudoSymbolName", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RandomPseudoSymbolName"]|>}, 
+                 "f3ad617b-9afb-44c1-a80b-da0cc4712b8e" -> {
+                  "Information" -> <|
+                    "Label" -> "RailFenceCipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RailFenceCipher"]|>}, 
+                 "bb3a155d-e023-4762-a42a-f6e9a6dd95e2" -> {
+                  "Information" -> <|
+                    "Label" -> "RailFenceDecipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RailFenceDecipher"]|>}, 
+                 "863cce34-04b4-40aa-bbfe-e92f29d18ae9" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageLineLevel", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageLineLevel"]|>}, 
+                 "247a2732-bd80-4aa7-8a69-aa9a31d003f6" -> {
+                  "Information" -> <|
+                    "Label" -> "ShuffleOrder", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ShuffleOrder"]|>}, 
+                 "ac853024-6b14-4630-add4-76c4c367ff1d" -> {
+                  "Information" -> <|
+                    "Label" -> "MongeanShuffle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/MongeanShuffle"]|>}, 
+                 "e3d168f6-5884-4701-909b-f0b9e20b4a3e" -> {
+                  "Information" -> <|
+                    "Label" -> "SteganographyExtract", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SteganographyExtract"]|>}, 
+                 "72715778-40be-419f-aa85-fc3a85b7850c" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomPretentiousJobTitle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RandomPretentiousJobTitle"]|>}, 
+                 "e7427366-b6eb-42f2-a4ce-efdf60f8aa61" -> {
+                  "Information" -> <|
+                    "Label" -> "AnagramQ", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/AnagramQ"]|>}, 
+                 "d2a1aef5-f14d-4273-936a-ba876d31875c" -> {
+                  "Information" -> <|
+                    "Label" -> "PowerTowerMod", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PowerTowerMod"]|>}, 
+                 "9661d7d5-0d18-4928-8380-648ee4e2e9c5" -> {
+                  "Information" -> <|
+                    "Label" -> "AddMatplotlibColors", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/9661d7d5-0d18-4928-8380-648ee4e2e9c5/"]|>}, 
+                 "262c0dcb-bdf9-4425-8391-69751d48b4f2" -> {
+                  "Information" -> <|
+                    "Label" -> "CountdownDialog", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/CountdownDialog"]|>}, 
+                 "19469b7a-7c59-495b-8840-c074b896a0a7" -> {
+                  "Information" -> <|
+                    "Label" -> "HDRImageEffect", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/HDRImageEffect"]|>}, 
+                 "fe386761-ec07-4506-929e-11b5d0fab0c6" -> {
+                  "Information" -> <|
+                    "Label" -> "ConicAnamorphosisMap", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ConicAnamorphosisMap"]|>}, 
+                 "f0bc7547-9240-4ff7-8109-c572067168ec" -> {
+                  "Information" -> <|
+                    "Label" -> "DigitalCirclism", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/DigitalCirclism"]|>}, 
+                 "9153cc30-4a2f-4c73-877a-870aa334f906" -> {
+                  "Information" -> <|
+                    "Label" -> "Uwuify", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/Uwuify"]|>}, 
+                 "d222c29d-174f-4325-a775-ac1452598742" -> {
+                  "Information" -> <|
+                    "Label" -> "Alphametic", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Alphametic"]|>}, 
+                 "6d81e10b-9ab8-4599-bd6f-1c63fbaf8db0" -> {
+                  "Information" -> <|
+                    "Label" -> "FCGRImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/FCGRImage"]|>}, 
+                 "dc16c482-1629-4641-b190-3df24e881828" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageRead", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageRead"]|>}, 
+                 "ce315ddb-a747-447a-8adf-a626ea8541cd" -> {
+                  "Information" -> <|
+                    "Label" -> "PebbleStoneEffect", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PebbleStoneEffect"]|>}, 
+                 "a246373b-3506-4205-bb9a-7af2586fc6e8" -> {
+                  "Information" -> <|
+                    "Label" -> "LocalResourceObjects", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/LocalResourceObjects"]|>}, 
+                 "e0bd4fe6-9951-4954-a655-c893eb62e977" -> {
+                  "Information" -> <|
+                    "Label" -> "SymbolExamples", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SymbolExamples"]|>}, 
+                 "a9721f66-7ec1-45f4-8e55-cdcd8868b055" -> {
+                  "Information" -> <|
+                    "Label" -> "JewishNewYear", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/JewishNewYear"]|>}, 
+                 "132691cc-2146-4de1-bc02-4c540fa11438" -> {
+                  "Information" -> <|
+                    "Label" -> "ResourceFunctionSearch", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ResourceFunctionSearch"]|>}, 
+                 "9ff65e59-cbc6-44e7-bba3-1f3b99f83af6" -> {
+                  "Information" -> <|
+                    "Label" -> "Spirograph", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Spirograph"]|>}, 
+                 "2fbeef37-b24c-4f4a-87b1-d18fb03112c0" -> {
+                  "Information" -> <|
+                    "Label" -> "DisplayKillerSudokuPuzzle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DisplayKillerSudokuPuzzle"]|>}, 
+                 "a2d32b63-f316-4812-b664-fc5192cb991d" -> {
+                  "Information" -> <|
+                    "Label" -> "QuasiPerfectNumberQ", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/QuasiPerfectNumberQ"]|>}, 
+                 "b15b1430-4592-4d3f-8794-4c7769c58c46" -> {
+                  "Information" -> <|
+                    "Label" -> "Polyomino", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Polyomino"]|>}, 
+                 "f225b527-fc83-4eda-9390-d05f08f92b1b" -> {
+                  "Information" -> <|
+                    "Label" -> "PlayingCardGraphic", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PlayingCardGraphic"]|>}, 
+                 "fdf11ee6-f7f2-4d1b-90b5-5e501779a332" -> {
+                  "Information" -> <|
+                    "Label" -> "TextChangeAnimation", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/TextChangeAnimation"]|>}, 
+                 "751bc13f-28d7-49c4-8d86-53aa4baa3e18" -> {
+                  "Information" -> <|
+                    "Label" -> "InShuffle", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/InShuffle"]|>}, 
+                 "b5b00b9a-b36f-493f-b5f1-1af97b601ba5" -> {
+                  "Information" -> <|
+                    "Label" -> "PersistResourceFunction", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PersistResourceFunction"]|>}, 
+                 "e46ac8a6-95e1-42b2-8fb0-7a993b9c26c3" -> {
+                  "Information" -> <|
+                    "Label" -> "VersionOrder", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/VersionOrder"]|>}, 
+                 "a24858c8-45c5-4020-a8c2-c23bd5d26f04" -> {
+                  "Information" -> <|
+                    "Label" -> "BirdSay", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/BirdSay"]|>}, 
+                 "36d0192d-4f14-4690-8fd0-ffdad11b91f8" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageColorReplace", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageColorReplace"]|>}, 
+                 "e0e1553e-65d6-46d8-ac83-dae29ecfe0f1" -> {
+                  "Information" -> <|
+                    "Label" -> "RandomMaze", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/RandomMaze"]|>}, 
+                 "de752051-5b17-42aa-8516-fa3e01bc6186" -> {
+                  "Information" -> <|
+                    "Label" -> "Rhymes", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/Rhymes"]|>}, 
+                 "638eb97f-2e99-4e85-aba1-5131e282c447" -> {
+                  "Information" -> <|
+                    "Label" -> "AddDocumentationTools", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/AddDocumentationTools"]|>}, 
+                 "10ee7bd6-01ba-4631-9dc2-669a301f0dc9" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageShapeMorph", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageShapeMorph"]|>}, 
+                 "b643423b-ee26-420a-b540-bd3a0cc653a2" -> {
+                  "Information" -> <|
+                    "Label" -> "LinesImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/LinesImage"]|>}, 
+                 "b61c4104-e4f7-41b0-bf78-e41867112e1b" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageToDataURI", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageToDataURI"]|>}, 
+                 "004f6780-90a3-4b14-b0b7-a569c873d2fb" -> {
+                  "Information" -> <|
+                    "Label" -> "SameResourceQ", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SameResourceQ"]|>}, 
+                 "e9d0e450-5f4b-4992-a971-e4e194648645" -> {
+                  "Information" -> <|
+                    "Label" -> "LatinSquare", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/LatinSquare"]|>}, 
+                 "6a65da1c-f661-452e-8778-544a3de283d3" -> {
+                  "Information" -> <|
+                    "Label" -> "Anagrams", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/Anagrams"]|>}, 
+                 "19db4b0a-f5e5-414f-a12a-73d2b38a21d0" -> {
+                  "Information" -> <|
+                    "Label" -> "SampleColors", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SampleColors"]|>}, 
+                 "97122ea7-0c11-4589-b016-07337fd561b8" -> {
+                  "Information" -> <|
+                    "Label" -> "PigpenCipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/PigpenCipher"]|>}, 
+                 "e361b19f-12c1-4c69-b4bb-fbd2a8d1d230" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageRegionCrop", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/ImageRegionCrop"]|>}, 
+                 "debaa7e3-63b6-4ef0-aea4-5530ebb3d639" -> {
+                  "Information" -> <|
+                    "Label" -> "ResourceFunctionInput", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ResourceFunctionInput"]|>}, 
+                 "4b3b3026-dd03-4129-a757-11b2f4b5ec19" -> {
+                  "Information" -> <|
+                    "Label" -> "RegionInputField", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RegionInputField"]|>}, 
+                 "fb9ec21b-0d4f-449c-8e2f-3c7c9163b288" -> {
+                  "Information" -> <|
+                    "Label" -> "CompassPoint", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/CompassPoint"]|>}, 
+                 "fa4f1a81-dd00-480d-b3d3-edf987ea2c04" -> {
+                  "Information" -> <|
+                    "Label" -> "SimpleListAnimate", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/SimpleListAnimate"]|>}, 
+                 "f7b7a08b-f6e7-4dbc-9301-8c4e3f5f6e41" -> {
+                  "Information" -> <|
+                    "Label" -> "DrawSketch", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/DrawSketch"]|>}, 
+                 "df257827-0ee0-44a6-b7ab-5c4bb0281157" -> {
+                  "Information" -> <|
+                    "Label" -> "MinkowskiSausageCurve", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/MinkowskiSausageCurve"]|>}, 
+                 "7d7b2657-d84e-4b15-92bd-177633310dba" -> {
+                  "Information" -> <|
+                    "Label" -> "DesaturateExcept", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DesaturateExcept"]|>}, 
+                 "511fd286-bdd6-4784-8a09-62e5a9d7d399" -> {
+                  "Information" -> <|
+                    "Label" -> "AffineCipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/AffineCipher"]|>}, 
+                 "55e5a7fc-f8a0-497a-8c06-33d3c3d8b78c" -> {
+                  "Information" -> <|
+                    "Label" -> "MoveMouse", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/MoveMouse"]|>}, 
+                 "c8c2e54e-4ea5-4135-ab87-83db692a84d2" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageInspector", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageInspector"]|>}, 
+                 "d9ca575f-f36c-4cf3-8e53-d3c6f3ccb425" -> {
+                  "Information" -> <|
+                    "Label" -> "AntiSimplify", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://resources.wolframcloud.com/FunctionRepository/\
+resources/AntiSimplify"]|>}, 
+                 "f8e09169-7f2e-43fc-8628-5108b8d33f47" -> {
+                  "Information" -> <|
+                    "Label" -> "SubimageApply", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SubimageApply"]|>}, 
+                 "5867f2b6-f816-4aea-a129-4a250c8ed41d" -> {
+                  "Information" -> <|
+                    "Label" -> "BrowserWebImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/BrowserWebImage"]|>}, 
+                 "2f33ee13-1b27-4e4f-898f-fe3e472ef722" -> {
+                  "Information" -> <|
+                    "Label" -> "CloudResourceObjects", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/CloudResourceObjects"]|>}, 
+                 "236c95ea-babd-4357-b16e-9bf42d5d7da3" -> {
+                  "Information" -> <|
+                    "Label" -> "EvaluateDefinitionNotebookSection", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/EvaluateDefinitionNotebookSection"]|>},
+                  "28009a11-98c5-4cf3-8294-76983445ab75" -> {
+                  "Information" -> <|
+                    "Label" -> "ResourceFunctionSymbols", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ResourceFunctionSymbols"]|>}, 
+                 "30708445-e890-49b0-a1ed-7c45b60881f8" -> {
+                  "Information" -> <|
+                    "Label" -> "ChessPGNDisplay", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ChessPGNDisplay"]|>}, 
+                 "e42fe59d-9cd4-4f48-a4e0-e23057debd8e" -> {
+                  "Information" -> <|
+                    "Label" -> "LatticePointsArrangement", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/LatticePointsArrangement"]|>}, 
+                 "14e11308-823f-4dae-a4ce-9072a205c09e" -> {
+                  "Information" -> <|
+                    "Label" -> "SmoothIntegerQ", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SmoothIntegerQ"]|>}, 
+                 "46782c2a-fc8a-4bf4-a79d-4dd21b7a45fb" -> {
+                  "Information" -> <|
+                    "Label" -> "WastefulNumberQ", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/WastefulNumberQ"]|>}, 
+                 "6d7bd8c8-5f68-45b9-a400-91ecbd642b82" -> {
+                  "Information" -> <|
+                    "Label" -> "TallyMarks", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/TallyMarks"]|>}, 
+                 "a19874a1-584d-4ac1-aab3-550d9748cced" -> {
+                  "Information" -> <|
+                    "Label" -> "SetOutputFormCellLabels", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SetOutputFormCellLabels"]|>}, 
+                 "e0307cc7-7e23-4562-a7ea-af694044e8e9" -> {
+                  "Information" -> <|
+                    "Label" -> "RecentResourceFunctions", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/RecentResourceFunctions"]|>}, 
+                 "Images" -> {"Root" -> True}, 
+                 "c04e7471-4e81-41a4-87d6-26a935f576a0" -> {
+                  "Information" -> <|
+                    "Label" -> "SpeechBubble", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SpeechBubble"]|>}, 
+                 "bd68cddf-09e3-4848-8ccf-44cb478eb7a9" -> {
+                  "Information" -> <|
+                    "Label" -> "GenealogyTreePlot", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/GenealogyTreePlot"]|>}, 
+                 "2bdc8ef2-07ef-43eb-814d-d9c4a43f2b45" -> {
+                  "Information" -> <|
+                    "Label" -> "GetLoremFlickrImage", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/GetLoremFlickrImage"]|>}, 
+                 "bef79a4e-9f2d-451b-81ff-1619f4f62283" -> {
+                  "Information" -> <|
+                    "Label" -> "SIMBADIdentifiers", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SIMBADIdentifiers"]|>}, 
+                 "a163b15d-d3ce-4f8a-aecc-975a5367f34a" -> {
+                  "Information" -> <|
+                    "Label" -> "SVGImport", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/SVGImport"]|>}, 
+                 "e5b2d275-fe5e-45a4-9e59-dd1f4c0fe2d5" -> {
+                  "Information" -> <|
+                    "Label" -> "KillItWithFire", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/KillItWithFire"]|>}, 
+                 "b1f0e216-e805-40a1-bcb9-c5e16a20223a" -> {
+                  "Information" -> <|
+                    "Label" -> "ChaoDecipher", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ChaoDecipher"]|>}, 
+                 "2035f976-850f-40ae-8053-4f6356fac6bc" -> {
+                  "Information" -> <|
+                    "Label" -> "ImageEngrave", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImageEngrave"]|>}, 
+                 "17b665fb-e257-4e25-969b-59ec1c1560eb" -> {
+                  "Information" -> <|
+                    "Label" -> "ImportFactorioBlueprintString", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ImportFactorioBlueprintString"]|>}, 
+                 "a90d4b2b-f80d-4a6c-a042-ffb8add4f866" -> {
+                  "Information" -> <|
+                    "Label" -> "ContentAwareImageResize", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/ContentAwareImageResize"]|>}, 
+                 "8cdeb240-b176-43ab-9870-7a56e3912e40" -> {
+                  "Information" -> <|
+                    "Label" -> "DynamicStringSearch", "URL" -> 
+                    Hyperlink[
+                    "Webpage", 
+                    "https://www.wolframcloud.com/obj/resourcesystem/\
+published/FunctionRepository/resources/DynamicStringSearch"]|>}}}]]& , 
+            Bob`ContentBrowser`Private`buttonids$$]]], StandardForm],
+        ImageSizeCache->{342., {25., 31.}}]}
+     },
+     AutoDelete->False,
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+    "Grid"]],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.8471938262021*^9},
+ CellLabel->"Out[68]=",
+ CellID->1596340202,ExpressionUUID->"bef7d9b0-d174-4644-b409-b18ccb604105"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Properties & Relations", "ExampleSection",ExpressionUUID->
+   "99e8f633-772a-45a1-9c65-d3f7f542ae0b"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->951713439,ExpressionUUID->"ca10a14b-134a-458c-bec5-36c9b488e586"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Possible Issues", "ExampleSection",ExpressionUUID->
+   "3f61cb3f-ea59-4cf3-9a39-500bc3dd4462"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->989566417,ExpressionUUID->"e56b6ee0-2cbe-4cb9-a220-077421ab3557"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Interactive Examples", "ExampleSection",ExpressionUUID->
+   "446ff6fb-7e9c-4f49-aa92-63a2bb470b18"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1529408151,ExpressionUUID->"1af0f59e-59f1-4716-9a53-cd67222a3af4"],
+
+Cell[BoxData[
+ InterpretationBox[Cell[
+  "Neat Examples", "ExampleSection",ExpressionUUID->
+   "661332ed-9f46-4b11-8a35-7eb772ee66b8"],
+  $Line = 0; Null]], "ExampleSection",
+ CellID->1531022914,ExpressionUUID->"7ec91167-ad9e-4aa7-9a4d-4c441e0bf8f7"]
+}, Open  ]]
+},
+WindowSize->{700, 770},
+WindowMargins->{{4, Automatic}, {Automatic, 0}},
+TaggingRules->{
+ "DocuToolsSettingsInternal" -> {
+   "$PacletVersion" -> "0.10.2125", "$MVersion" -> "12", "$FlaggedVersion" -> 
+    11.3}, "WelcomeScreenSettings" -> {"FEStarting" -> False}, 
+  "SaveDialogDataSavesBlog" -> False, "Author" -> "bobs", "CreationDate" -> 
+  "11-29-2021 10:55:36"},
+CellContext->"Global`",
+FrontEndVersion->"13.0 for Mac OS X x86 (64-bit) (November 28, 2021)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "FunctionPageStylesExt.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"d842a901-ce6f-46c5-af6a-d4a1ac13de9f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "DefaultContent"->{
+  Cell[10880, 329, 264, 4, 22, "ExampleText",ExpressionUUID->"353fe172-ce13-4873-84a8-2a4014a7848e",
+   CellTags->"DefaultContent",
+   CellID->319073343],
+  Cell[11169, 337, 1290, 36, 104, "Input",ExpressionUUID->"81a0e417-6f1d-4b8c-9be7-dc45d0fdc205",
+   CellTags->"DefaultContent",
+   CellID->469682135],
+  Cell[12462, 375, 1764, 45, 115, "Output",ExpressionUUID->"045a8489-44cc-42d5-a3bc-3979dac600d5",
+   CellTags->"DefaultContent",
+   CellID->1607595486],
+  Cell[14699, 439, 1335, 38, 24, "ExampleText",ExpressionUUID->"8f3cd233-445a-4f00-877e-c1e67194909f",
+   CellTags->"DefaultContent",
+   CellID->1092683288],
+  Cell[16059, 481, 5388, 102, 62, "Input",ExpressionUUID->"4b986f9e-390d-4c9a-9d9b-5927fcb690c1",
+   CellTags->"DefaultContent",
+   CellID->1595355919],
+  Cell[21450, 585, 2529, 62, 122, "Output",ExpressionUUID->"8b93d153-a44b-4c5e-a60e-83997b369364",
+   CellTags->"DefaultContent",
+   CellID->2007604754]},
+ "ExtendedExamples"->{
+  Cell[14275, 426, 155, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"d90f0f1b-1a34-4065-b63c-de2dae239059",
+   CellTags->"ExtendedExamples",
+   CellID->1652400927]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"DefaultContent", 142856, 3036},
+ {"ExtendedExamples", 143806, 3055}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 598, 14, 24, "History",ExpressionUUID->"3fbaf656-091e-4d89-a2bb-d3621d3f7209",
+ CellID->356472133],
+Cell[1159, 36, 136, 1, 20, "AuthorDate",ExpressionUUID->"dc807e46-029e-49f0-b912-13681e46f1ac",
+ CellID->753057244],
+Cell[CellGroupData[{
+Cell[1320, 41, 123, 1, 29, "CategorizationSection",ExpressionUUID->"645628ab-45a6-45f6-96b5-2a8d79136bb4",
+ CellID->1895247848],
+Cell[1446, 44, 135, 2, 30, "Categorization",ExpressionUUID->"a7ea810b-7d04-42be-af6c-ed11f15150ac",
+ CellID->1953129032],
+Cell[1584, 48, 147, 2, 30, "Categorization",ExpressionUUID->"edbb980c-3ade-456e-af45-5a65c76cc61b",
+ CellID->1952096429],
+Cell[1734, 52, 144, 2, 30, "Categorization",ExpressionUUID->"73c5c9ca-9600-4ce4-88e6-0933d835e212",
+ CellID->1777006984],
+Cell[1881, 56, 151, 2, 30, "Categorization",ExpressionUUID->"a02ca6d8-3be7-4dfb-b8db-6891266962f9",
+ CellID->1101301259]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2069, 63, 110, 1, 29, "KeywordsSection",ExpressionUUID->"01ec922b-5313-4805-80c3-ffe23f57c124",
+ CellID->408706520],
+Cell[2182, 66, 100, 1, 19, "Keywords",ExpressionUUID->"d9830722-5b2b-4067-ba67-c6d812a3a501",
+ CellID->1477778534]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2319, 72, 120, 1, 29, "TemplatesSection",ExpressionUUID->"291b894a-cdb9-4eb8-a003-f68659d95469",
+ CellID->1375443383],
+Cell[2442, 75, 149, 2, 27, "Template",ExpressionUUID->"d17b2532-b03c-44a1-ba5a-eee8902199d9",
+ CellID->1562961773],
+Cell[2594, 79, 137, 2, 27, "Template",ExpressionUUID->"e362771d-4b23-47f8-8a6c-c56503deec75",
+ CellID->678548707],
+Cell[2734, 83, 136, 2, 27, "Template",ExpressionUUID->"d3385756-54c2-41f3-a698-f2d7dd6d5e11",
+ CellID->1229952979],
+Cell[2873, 87, 137, 2, 27, "Template",ExpressionUUID->"cb07573b-4bb1-48fc-98d8-ee197ff8fbfc",
+ CellID->142132031]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3047, 94, 104, 1, 63, "ObjectName",ExpressionUUID->"b84b8dfd-c3b8-4c90-90dc-87dd54fb985f",
+ CellID->811229553],
+Cell[3154, 97, 706, 17, 78, "Usage",ExpressionUUID->"fdf6da11-0bff-4b4b-99eb-b88dc2ab9c8b",
+ CellID->2108906115],
+Cell[3863, 116, 612, 18, 28, "Notes",ExpressionUUID->"a2efbbe1-d7fd-4aff-b28b-a3350ec108fc",
+ CellID->167481070],
+Cell[4478, 136, 695, 18, 44, "Notes",ExpressionUUID->"961161de-d22d-4bce-a79b-738f76c608de",
+ CellID->1604486931],
+Cell[5176, 156, 805, 15, 41, "2ColumnTableMod",ExpressionUUID->"41b72c01-c53c-4298-82e2-4df74eaed017",
+ CellID->1429568707],
+Cell[5984, 173, 1619, 52, 43, "Notes",ExpressionUUID->"b284774b-2d61-4fe4-bd12-e658d5602a41",
+ CellID->2118532264],
+Cell[7606, 227, 1441, 38, 82, "Notes",ExpressionUUID->"a6ed70f1-3e80-448b-8ed8-5dba1b3af288",
+ CellID->84834256]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9084, 270, 114, 1, 44, "TechNotesSection",ExpressionUUID->"ffc9fc35-d59e-4d79-82e3-eb71e9148148",
+ CellID->1650765920],
+Cell[9201, 273, 101, 1, 16, "Tutorials",ExpressionUUID->"6ecab76e-b106-4f93-b96b-249b18063b87",
+ CellID->1081581847]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9339, 279, 138, 1, 31, "RelatedDemonstrationsSection",ExpressionUUID->"8a1e45eb-7f43-478a-a024-fbda1fd3c8a4",
+ CellID->1844514321],
+Cell[9480, 282, 113, 1, 16, "RelatedDemonstrations",ExpressionUUID->"2a88e25a-8a27-462b-ae5a-0b3ffbf6fc4f",
+ CellID->1825748602]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9630, 288, 120, 1, 31, "RelatedLinksSection",ExpressionUUID->"d46e4205-c090-4003-9992-03b08a68d56d",
+ CellID->2110405478],
+Cell[9753, 291, 104, 1, 16, "RelatedLinks",ExpressionUUID->"37e74f29-415d-44e4-a32c-8242acbc35a7",
+ CellID->1744954894]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9894, 297, 110, 1, 31, "SeeAlsoSection",ExpressionUUID->"50766fe4-33c6-400d-ae6b-82a3cbaee074",
+ CellID->1420220026],
+Cell[10007, 300, 98, 1, 16, "SeeAlso",ExpressionUUID->"93683ef2-16ef-4e57-8770-239a2b1154b9",
+ CellID->357240577]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10142, 306, 184, 2, 31, "MoreAboutSection",ExpressionUUID->"4155d5f0-0956-44c4-b000-230ddb56b2c3",
+ CellID->1925584274],
+Cell[10329, 310, 100, 1, 16, "MoreAbout",ExpressionUUID->"cc5e8f60-e4f3-4850-a9d1-de93a1ca9ea4",
+ CellID->716332828]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10466, 316, 411, 11, 70, "PrimaryExamplesSection",ExpressionUUID->"abd60d39-0b7f-48f3-aa52-ab38354fc77e",
+ CellID->612515114],
+Cell[10880, 329, 264, 4, 22, "ExampleText",ExpressionUUID->"353fe172-ce13-4873-84a8-2a4014a7848e",
+ CellTags->"DefaultContent",
+ CellID->319073343],
+Cell[CellGroupData[{
+Cell[11169, 337, 1290, 36, 104, "Input",ExpressionUUID->"81a0e417-6f1d-4b8c-9be7-dc45d0fdc205",
+ CellTags->"DefaultContent",
+ CellID->469682135],
+Cell[12462, 375, 1764, 45, 115, "Output",ExpressionUUID->"045a8489-44cc-42d5-a3bc-3979dac600d5",
+ CellTags->"DefaultContent",
+ CellID->1607595486]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14275, 426, 155, 2, 56, "ExtendedExamplesSection",ExpressionUUID->"d90f0f1b-1a34-4065-b63c-de2dae239059",
+ CellTags->"ExtendedExamples",
+ CellID->1652400927],
+Cell[CellGroupData[{
+Cell[14455, 432, 241, 5, 33, "ExampleSection",ExpressionUUID->"89715379-975a-445b-81fd-cef83bed7f17",
+ CellID->643857085],
+Cell[14699, 439, 1335, 38, 24, "ExampleText",ExpressionUUID->"8f3cd233-445a-4f00-877e-c1e67194909f",
+ CellTags->"DefaultContent",
+ CellID->1092683288],
+Cell[CellGroupData[{
+Cell[16059, 481, 5388, 102, 62, "Input",ExpressionUUID->"4b986f9e-390d-4c9a-9d9b-5927fcb690c1",
+ CellTags->"DefaultContent",
+ CellID->1595355919],
+Cell[21450, 585, 2529, 62, 122, "Output",ExpressionUUID->"8b93d153-a44b-4c5e-a60e-83997b369364",
+ CellTags->"DefaultContent",
+ CellID->2007604754]
+}, Open  ]]
+}, Open  ]],
+Cell[24006, 651, 264, 5, 33, "ExampleSection",ExpressionUUID->"880d90b2-07f9-4fe9-8ad9-dd3dc2443442",
+ CellID->135930362],
+Cell[CellGroupData[{
+Cell[24295, 660, 244, 5, 21, "ExampleSection",ExpressionUUID->"cce99a2a-bdae-4b14-b2c4-579a2315303e",
+ CellID->1806477373],
+Cell[24542, 667, 246, 5, 24, "ExampleSubsection",ExpressionUUID->"91072e34-fd15-4061-a95b-e85cde40dbf1",
+ CellID->341406725],
+Cell[24791, 674, 247, 5, 20, "ExampleSubsection",ExpressionUUID->"6af171cc-ff3a-467c-a1c4-a59b5d83689e",
+ CellID->2094005938]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25075, 684, 248, 5, 33, "ExampleSection",ExpressionUUID->"3398400c-91d8-41b8-a076-a9596291b1de",
+ CellID->995792930],
+Cell[25326, 691, 206, 2, 22, "ExampleText",ExpressionUUID->"1191c453-57bb-4e07-86e6-d4a19b3edc18",
+ CellID->1479197182],
+Cell[CellGroupData[{
+Cell[25557, 697, 1303, 36, 180, "Input",ExpressionUUID->"ac240f74-ebf0-433a-8d60-02168ef1a969",
+ CellID->812166104],
+Cell[26863, 735, 114175, 2249, 115, "Output",ExpressionUUID->"bef7d9b0-d174-4644-b409-b18ccb604105",
+ CellID->1596340202]
+}, Open  ]]
+}, Open  ]],
+Cell[141065, 2988, 258, 5, 33, "ExampleSection",ExpressionUUID->"ca10a14b-134a-458c-bec5-36c9b488e586",
+ CellID->951713439],
+Cell[141326, 2995, 251, 5, 21, "ExampleSection",ExpressionUUID->"e56b6ee0-2cbe-4cb9-a220-077421ab3557",
+ CellID->989566417],
+Cell[141580, 3002, 257, 5, 21, "ExampleSection",ExpressionUUID->"1af0f59e-59f1-4716-9a53-cd67222a3af4",
+ CellID->1529408151],
+Cell[141840, 3009, 250, 5, 21, "ExampleSection",ExpressionUUID->"7ec91167-ad9e-4aa7-9a4d-4c441e0bf8f7",
+ CellID->1531022914]
+}, Open  ]]
+}
+]
+*)
+
